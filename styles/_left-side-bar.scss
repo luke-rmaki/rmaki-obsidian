@@ -1,0 +1,66 @@
+// Ribbon container
+.side-dock-ribbon.mod-left {
+  background-color: var(--black);
+  // Ribbon buttons
+  .side-dock-ribbon-action {
+    color: var(--purple-dark-two);
+  }
+  // Arrow
+  .workspace-ribbon-collapse-btn {
+    color: var(--accent);
+  }
+}
+
+// Left sidebar
+.workspace-split.mod-left-split {
+  background-color: var(--black-light-one);
+  .workspace-tabs {
+    background-color: var(--black-light-one);
+
+    // Header section
+    .workspace-tab-header-container {
+      background-color: var(--black-light-two);
+
+      // currently selected tab
+      .workspace-tab-header.is-active {
+        color: var(--accent);
+      }
+      .is-active {
+        background-color: var(--black-light-one);
+      }
+
+      // all tabs
+      .workspace-tab-header {
+        color: var(--purple-dark-one);
+        background-color: var(--black-light-two);
+
+        &:hover {
+          color: var(--accent);
+        }
+      }
+      .is-before-active,
+      .is-after-active {
+        background-color: var(--black-light-two);
+        .workspace-tab-header-inner {
+          background-color: var(--black-light-two);
+        }
+      }
+    }
+
+    // Main sidebar (on top of workspace-tabs
+    .workspace-leaf {
+      background-color: var(--black-light-one);
+
+      // New file/folder .e.c.t
+      .nav-header {
+        .nav-action-button {
+          color: var(--purple-dark-two);
+
+          &:hover {
+            color: var(--accent);
+          }
+        }
+      }
+    }
+  }
+}

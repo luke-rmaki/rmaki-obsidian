@@ -5,13 +5,95 @@
 `-' `-'`-' ` `-'`-'  `-'`-' `-'`-'    `----' `----' `----' `-'`----' `-'`-'  `-'`-' `-'
 
 Made by: Luke Ruokaismaki
-Version: 0.1
-Repo: 
+Version: 0.2
+Repo: https://github.com/luke-rmaki/rmaki-obsidian
 
 
 */
-h1 {
-  color: blue; }
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+:root {
+  --h-purple: 246;
+  --s-purple: 28%;
+  --l-purple: 48%;
+  --h-black: 240;
+  --s-black: 7%;
+  --l-black: 10%;
+  --step-one: 1.6%;
+  --step-two: 3.2%;
+  --purple: hsl(var(--h-purple), var(--s-purple), var(--l-purple));
+  --black: hsl(var(--h-black), var(--s-black), var(--l-black));
+  --accent: hsl(164, 68%, 72%);
+  --white: hsl(212, 61%, 91%);
+  --purple-dark-one: hsl(
+    var(--h-purple),
+    var(--s-purple),
+    calc(var(--l-purple) - var(--step-one))
+  );
+  --purple-dark-two: hsl(
+    var(--h-purple),
+    var(--s-purple),
+    calc(var(--l-purple) - var(--step-two))
+  );
+  --purple-light-one: hsl(
+    var(--h-purple),
+    var(--s-purple),
+    calc(var(--l-purple) + var(--step-one))
+  );
+  --purple-light-two: hsl(
+    var(--h-purple),
+    var(--s-purple),
+    calc(var(--l-purple) + var(--step-two))
+  );
+  --black-light-one: hsl(
+    var(--h-black),
+    var(--s-black),
+    calc(var(--l-black) + var(--step-one))
+  );
+  --black-light-two: hsl(
+    var(--h-black),
+    var(--s-black),
+    calc(var(--l-black) + var(--step-two))
+  );
+  --font: "Fira Code", monospace; }
 
-body {
-  background: red; }
+.titlebar {
+  background-color: var(--black); }
+  .titlebar .titlebar-text {
+    color: var(--white); }
+  .titlebar .titlebar-button {
+    color: var(--white); }
+
+.side-dock-ribbon.mod-left {
+  background-color: var(--black); }
+  .side-dock-ribbon.mod-left .side-dock-ribbon-action {
+    color: var(--purple-dark-two); }
+  .side-dock-ribbon.mod-left .workspace-ribbon-collapse-btn {
+    color: var(--accent); }
+
+.workspace-split.mod-left-split {
+  background-color: var(--black-light-one); }
+  .workspace-split.mod-left-split .workspace-tabs {
+    background-color: var(--black-light-one); }
+    .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container {
+      background-color: var(--black-light-two); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header.is-active {
+        color: var(--accent); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-active {
+        background-color: var(--black-light-one); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header {
+        color: var(--purple-dark-one);
+        background-color: var(--black-light-two); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:hover {
+          color: var(--accent); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-before-active,
+      .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-after-active {
+        background-color: var(--black-light-two); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-before-active .workspace-tab-header-inner,
+        .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-after-active .workspace-tab-header-inner {
+          background-color: var(--black-light-two); }
+    .workspace-split.mod-left-split .workspace-tabs .workspace-leaf {
+      background-color: var(--black-light-one); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button {
+        color: var(--purple-dark-two); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:hover {
+          color: var(--accent); }
