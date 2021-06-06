@@ -1,0 +1,17 @@
+{
+  "name": "rmaki-obsidian",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Luke Ruokaismaki",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^6.0.0"
+  },
+  "scripts": {
+    "dev": "gulp sass:watch",
+    "build": "gulp sass"
+  }
+}
