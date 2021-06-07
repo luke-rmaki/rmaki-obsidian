@@ -7,10 +7,18 @@
 Made by: Luke Ruokaismaki
 Version: 0.2
 Repo: https://github.com/luke-rmaki/rmaki-obsidian
+Built with SCSS and Gulp
 
 
 */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 @import "vars";
+
+body {
+  font-family: var(--font);
+}
+
 @import "titlebar";
 @import "left-side-bar";
+@import "main-body";
+@import "text-styles";

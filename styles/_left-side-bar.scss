@@ -1,9 +1,14 @@
+// --------------------------------------------------------------- LEFT RIBBON
 // Ribbon container
 .side-dock-ribbon.mod-left {
   background-color: var(--black);
   // Ribbon buttons
   .side-dock-ribbon-action {
-    color: var(--purple-dark-two);
+    color: var(--purple-dark-one);
+
+    &:hover {
+      color: var(--accent);
+    }
   }
   // Arrow
   .workspace-ribbon-collapse-btn {
@@ -11,11 +16,21 @@
   }
 }
 
-// Left sidebar
+// ---------------------------------------------------------------- LEFT SIDEBAR
 .workspace-split.mod-left-split {
-  background-color: var(--black-light-one);
+  background-color: var(--black);
+
+  // resize hr between left sidebar and editor
+  .workspace-leaf-resize-handle {
+    background-color: var(--purple-dark-two);
+
+    &:hover {
+      background-color: var(--accent);
+    }
+  }
+
   .workspace-tabs {
-    background-color: var(--black-light-one);
+    background-color: var(--black);
 
     // Header section
     .workspace-tab-header-container {
@@ -26,7 +41,7 @@
         color: var(--accent);
       }
       .is-active {
-        background-color: var(--black-light-one);
+        background-color: var(--black) !important;
       }
 
       // all tabs
@@ -34,7 +49,8 @@
         color: var(--purple-dark-one);
         background-color: var(--black-light-two);
 
-        &:hover {
+        &:hover,
+        &:focus {
           color: var(--accent);
         }
       }
@@ -47,17 +63,99 @@
       }
     }
 
-    // Main sidebar (on top of workspace-tabs
+    // Main sidebar (on top of workspace-tabs)
     .workspace-leaf {
-      background-color: var(--black-light-one);
+      background-color: var(--black);
 
       // New file/folder .e.c.t
       .nav-header {
         .nav-action-button {
           color: var(--purple-dark-two);
 
-          &:hover {
+          &:hover,
+          &:focus {
             color: var(--accent);
+          }
+        }
+      }
+
+      // File explorer
+      .nav-files-container {
+        // folders and main title
+        .nav-folder-title {
+          &:hover,
+          &focus {
+            background-color: var(--black-light-two);
+            .nav-folder-title-content {
+              background-color: var(--black-light-two);
+              color: var(--accent);
+            }
+          }
+          .nav-folder-title-content {
+            color: var(--white-dark-one);
+            font-weight: bold;
+          }
+        }
+
+        // file names
+        .nav-file {
+          &:hover,
+          &focus {
+            .nav-file-title,
+            .nav-file-title-content {
+              background-color: var(--black-light-two);
+              color: var(--accent);
+            }
+          }
+          .nav-file-title,
+          .nav-file-title-content {
+            color: var(--white-dark-one);
+            font-style: italic;
+          }
+        }
+      }
+
+      // Search tab
+      .workspace-leaf-content[data-type="search"] {
+        // buttons
+        .nav-action-button {
+          color: var(--purple);
+
+          &.is-active {
+            color: var(--accent);
+            background-color: var(--black);
+            border: 1px solid var(--accent);
+          }
+
+          &:hover {
+            color: var(--purple-light-two);
+          }
+        }
+        // search bar
+        .search-input-container input {
+          background-color: var(--black-light-one);
+          color: var(--white-dark-one);
+        }
+        // search results list
+        .search-result-container {
+          background-color: var(--black);
+
+          // search result item
+          .search-result {
+            // search result title
+            .tree-item-inner {
+              color: var(--white-dark-one);
+            }
+            // search result body
+            .search-result-file-match {
+              color: var(--white-dark-one);
+
+              // Search highlight
+              .search-result-file-matched-text {
+                background-color: var(--accent);
+                color: var(--black);
+              }
+            }
           }
         }
       }

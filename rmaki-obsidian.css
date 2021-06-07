@@ -7,6 +7,7 @@
 Made by: Luke Ruokaismaki
 Version: 0.2
 Repo: https://github.com/luke-rmaki/rmaki-obsidian
+Built with SCSS and Gulp
 
 
 */
@@ -18,12 +19,16 @@ Repo: https://github.com/luke-rmaki/rmaki-obsidian
   --h-black: 240;
   --s-black: 7%;
   --l-black: 10%;
-  --step-one: 1.6%;
-  --step-two: 3.2%;
+  --h-white: 212;
+  --s-white: 61%;
+  --l-white: 91%;
+  --step-one: 2.5%;
+  --step-two: 5%;
+  --step-two: 10%;
   --purple: hsl(var(--h-purple), var(--s-purple), var(--l-purple));
   --black: hsl(var(--h-black), var(--s-black), var(--l-black));
   --accent: hsl(164, 68%, 72%);
-  --white: hsl(212, 61%, 91%);
+  --white: hsl(var(--h-white), var(--s-white), var(--l-white));
   --purple-dark-one: hsl(
     var(--h-purple),
     var(--s-purple),
@@ -54,36 +59,63 @@ Repo: https://github.com/luke-rmaki/rmaki-obsidian
     var(--s-black),
     calc(var(--l-black) + var(--step-two))
   );
-  --font: "Fira Code", monospace; }
+  --white-dark-one: hsl(
+    var(--h-white),
+    var(--s-white),
+    calc(var(--l-white) - var(--step-one))
+  );
+  --white-dark-two: hsl(
+    var(--h-white),
+    var(--s-white),
+    calc(var(--l-white) - var(--step-two))
+  );
+  --white-dark-three: hsl(
+    var(--h-white),
+    var(--s-white),
+    calc(var(--l-white) - var(--step-three))
+  );
+  --font: "Fira Code", monospace;
+  --par: 1rem;
+  --heading: 1.1rem;
+  --small: 0.8rem; }
+
+body {
+  font-family: var(--font); }
 
 .titlebar {
   background-color: var(--black); }
   .titlebar .titlebar-text {
-    color: var(--white); }
+    color: var(--white-dark-one); }
   .titlebar .titlebar-button {
-    color: var(--white); }
+    color: var(--white-dark-two); }
 
 .side-dock-ribbon.mod-left {
   background-color: var(--black); }
   .side-dock-ribbon.mod-left .side-dock-ribbon-action {
-    color: var(--purple-dark-two); }
+    color: var(--purple-dark-one); }
+    .side-dock-ribbon.mod-left .side-dock-ribbon-action:hover {
+      color: var(--accent); }
   .side-dock-ribbon.mod-left .workspace-ribbon-collapse-btn {
     color: var(--accent); }
 
 .workspace-split.mod-left-split {
-  background-color: var(--black-light-one); }
+  background-color: var(--black); }
+  .workspace-split.mod-left-split .workspace-leaf-resize-handle {
+    background-color: var(--purple-dark-two); }
+    .workspace-split.mod-left-split .workspace-leaf-resize-handle:hover {
+      background-color: var(--accent); }
   .workspace-split.mod-left-split .workspace-tabs {
-    background-color: var(--black-light-one); }
+    background-color: var(--black); }
     .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container {
       background-color: var(--black-light-two); }
       .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header.is-active {
         color: var(--accent); }
       .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-active {
-        background-color: var(--black-light-one); }
+        background-color: var(--black) !important; }
       .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header {
         color: var(--purple-dark-one);
         background-color: var(--black-light-two); }
-        .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:hover {
+        .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:hover, .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:focus {
           color: var(--accent); }
       .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-before-active,
       .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-after-active {
@@ -92,8 +124,124 @@ Repo: https://github.com/luke-rmaki/rmaki-obsidian
         .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-after-active .workspace-tab-header-inner {
           background-color: var(--black-light-two); }
     .workspace-split.mod-left-split .workspace-tabs .workspace-leaf {
-      background-color: var(--black-light-one); }
+      background-color: var(--black); }
       .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button {
         color: var(--purple-dark-two); }
-        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:hover {
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:hover, .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:focus {
           color: var(--accent); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-title:hover, .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-titlefocus {
+        background-color: var(--black-light-two); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-title:hover .nav-folder-title-content, .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-titlefocus .nav-folder-title-content {
+          background-color: var(--black-light-two);
+          color: var(--accent); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-title .nav-folder-title-content {
+        color: var(--white-dark-one);
+        font-weight: bold; }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file:hover .nav-file-title,
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file:hover .nav-file-title-content, .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-filefocus .nav-file-title,
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-filefocus .nav-file-title-content {
+        background-color: var(--black-light-two);
+        color: var(--accent); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file-title,
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file-title-content {
+        color: var(--white-dark-one);
+        font-style: italic; }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .nav-action-button {
+        color: var(--purple); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .nav-action-button.is-active {
+          color: var(--accent);
+          background-color: var(--black);
+          border: 1px solid var(--accent); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .nav-action-button:hover {
+          color: var(--purple-light-two); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-input-container input {
+        background-color: var(--black-light-one);
+        color: var(--white-dark-one); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container {
+        background-color: var(--black); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .tree-item-inner {
+          color: var(--white-dark-one); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .search-result-file-match {
+          color: var(--white-dark-one); }
+          .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .search-result-file-match .search-result-file-matched-text {
+            background-color: var(--accent);
+            color: var(--black); }
+
+.mod-root .workspace-leaf .workspace-leaf-content .view-header {
+  background-color: var(--black) !important;
+  border-bottom: 2px solid var(--black-light-two) !important;
+  border-top: none; }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-header .view-header-icon {
+    color: var(--purple); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-header .view-header-icon:hover {
+      color: var(--accent); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-header .view-header-title {
+    color: var(--purple-light-two); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-header .view-action {
+    color: var(--white-dark-two); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-header .view-action:hover {
+      color: var(--accent); }
+
+.mod-root .workspace-leaf .workspace-leaf-content .view-content {
+  background-color: var(--black); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-content .empty-state-container {
+    color: var(--white-dark-two); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .empty-state-container .empty-state-action {
+      color: var(--white-dark-two); }
+      .mod-root .workspace-leaf .workspace-leaf-content .view-content .empty-state-container .empty-state-action:hover {
+        color: var(--accent); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-cursor {
+    border-left: 1px solid var(--white-dark-two); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-fat-cursor .CodeMirror-cursor {
+    background: var(--purple); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-gutters .CodeMirror-gutter {
+    background-color: var(--black); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-linenumber {
+    color: var(--purple-dark-two); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-activeline {
+    background-color: var(--black-light-one); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-activeline .CodeMirror-linenumber {
+      color: var(--purple-light-one); }
+
+/**
+  CodeMirror-line is the base line class
+  Each element type class has the form .HyperMD-[element type]
+    Nested in each element is a class .cm-formatting which styles the formatting markup
+*/
+.CodeMirror-line {
+  font-size: var(--par); }
+  .CodeMirror-line.HyperMD-header .cm-header {
+    font-size: var(--heading);
+    color: var(--purple); }
+  .CodeMirror-line.HyperMD-header .cm-formatting {
+    color: var(--accent); }
+  .CodeMirror-line.HyperMD-list-line .cm-formatting {
+    color: var(--purple); }
+  .CodeMirror-line .cm-em,
+  .CodeMirror-line .cm-strong {
+    color: var(--purple-light-two); }
+    .CodeMirror-line .cm-em.cm-formatting,
+    .CodeMirror-line .cm-strong.cm-formatting {
+      color: var(--accent); }
+  .CodeMirror-line .cm-formatting.cm-highlight {
+    color: var(--accent);
+    background-color: var(--black); }
+  .CodeMirror-line .cm-formatting + .cm-highlight {
+    background-color: var(--accent);
+    color: var(--black); }
+  .CodeMirror-line.HyperMD-quote .cm-formatting {
+    color: var(--accent); }
+  .CodeMirror-line.HyperMD-codeblock {
+    background-color: var(--black-light-one);
+    color: var(--white); }
+    .CodeMirror-line.HyperMD-codeblock.HyperMD-codeblock-begin, .CodeMirror-line.HyperMD-codeblock.HyperMD-codeblock-end {
+      color: var(--accent); }
+  .CodeMirror-line.HyperMD-hr .cm-hr {
+    color: var(--accent); }
+  .CodeMirror-line span.cm-formatting-link {
+    color: var(--purple); }
+  .CodeMirror-line .cm-formatting-link + .cm-hmd-internal-link {
+    color: var(--accent); }
+  .CodeMirror-line .cm-hmd-frontmatter {
+    font-size: var(--small);
+    color: var(--white-dark-three); }

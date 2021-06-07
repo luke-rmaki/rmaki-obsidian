@@ -6,14 +6,18 @@
   --h-black: 240;
   --s-black: 7%;
   --l-black: 10%;
+  --h-white: 212;
+  --s-white: 61%;
+  --l-white: 91%;
 
-  --step-one: 1.6%;
-  --step-two: 3.2%;
+  --step-one: 2.5%;
+  --step-two: 5%;
+  --step-two: 10%;
 
   --purple: hsl(var(--h-purple), var(--s-purple), var(--l-purple));
   --black: hsl(var(--h-black), var(--s-black), var(--l-black));
   --accent: hsl(164, 68%, 72%);
-  --white: hsl(212, 61%, 91%);
+  --white: hsl(var(--h-white), var(--s-white), var(--l-white));
 
   --purple-dark-one: hsl(
     var(--h-purple),
@@ -48,5 +52,31 @@
     calc(var(--l-black) + var(--step-two))
   );
 
+  --white-dark-one: hsl(
+    var(--h-white),
+    var(--s-white),
+    calc(var(--l-white) - var(--step-one))
+  );
+  --white-dark-two: hsl(
+    var(--h-white),
+    var(--s-white),
+    calc(var(--l-white) - var(--step-two))
+  );
+  --white-dark-three: hsl(
+    var(--h-white),
+    var(--s-white),
+    calc(var(--l-white) - var(--step-three))
+  );
+
   --font: "Fira Code", monospace;
+
+  // font sizes
+  --par: 1rem;
+  --heading: 1.1rem;
+  --small: 0.8rem;
+  // --h2: 1.35rem;
+  // --h3: 1.3rem;
+  // --h4: 1.2rem;
+  // --h5: 1.1rem;
+  // --h6: 1.05rem;
 }

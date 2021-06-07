@@ -1,0 +1,86 @@
+.mod-root {
+  // Workspace leaf is each editor: mod-active class is applied to the active editor
+  .workspace-leaf {
+    // Workspace leaf content has a data attribute for empty if there is no file
+    .workspace-leaf-content {
+      // ----------------------------------- Editor header
+      .view-header {
+        // Important used to avoid crazy nesting
+        background-color: var(--black) !important;
+        border-bottom: 2px solid var(--black-light-two) !important;
+        border-top: none;
+
+        // File icon
+        .view-header-icon {
+          color: var(--purple);
+          &:hover {
+            color: var(--accent);
+          }
+        }
+
+        .view-header-title {
+          color: var(--purple-light-two);
+        }
+
+        // Action icons
+        .view-action {
+          color: var(--white-dark-two);
+          &:hover {
+            color: var(--accent);
+          }
+        }
+      }
+
+      // ------------------------------------ Content
+      .view-content {
+        background-color: var(--black);
+
+        // Empty window content
+        .empty-state-container {
+          color: var(--white-dark-two);
+
+          .empty-state-action {
+            color: var(--white-dark-two);
+
+            &:hover {
+              color: var(--accent);
+            }
+          }
+        }
+
+        // -------------------------------- Editor styles
+        .markdown-source-view {
+          // Cursor insert mode
+          .CodeMirror-cursor {
+            border-left: 1px solid var(--white-dark-two);
+          }
+
+          // Cursor normal
+          .cm-fat-cursor .CodeMirror-cursor {
+            background: var(--purple);
+          }
+
+          // Gutters
+          .CodeMirror-gutters .CodeMirror-gutter {
+            background-color: var(--black);
+          }
+          .CodeMirror-linenumber {
+            color: var(--purple-dark-two);
+          }
+
+          //---------------------  Content styles
+          // See _text-styles.scss
+
+          // ------ Active line styles
+          .CodeMirror-activeline {
+            background-color: var(--black-light-one);
+
+            .CodeMirror-linenumber {
+              color: var(--purple-light-one);
+            }
+          }
+        }
+      }
+    }
+  }
+}
