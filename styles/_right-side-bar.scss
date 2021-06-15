@@ -1,0 +1,122 @@
+// ---------------------------------------------------------------- LEFT SIDEBAR
+.workspace-split.mod-right-split {
+  background-color: var(--sidebar-background);
+
+  // resize hr between left sidebar and editor
+  .workspace-leaf-resize-handle {
+    background-color: var(--purple-dark-2);
+    width: 2px;
+
+    &:hover,
+    &:focus {
+      background-color: var(--accent);
+    }
+  }
+
+  .workspace-tabs {
+    background-color: var(--black);
+
+    // Header section
+    .workspace-tab-header-container {
+      background-color: var(--tab-background);
+
+      // currently selected tab
+      .workspace-tab-header.is-active {
+        color: var(--icon-hover);
+      }
+      .is-active {
+        background-color: var(--black) !important;
+      }
+
+      // all tabs
+      .workspace-tab-header {
+        color: var(--icon-normal);
+        background-color: var(--tab-background);
+
+        &:hover,
+        &:focus {
+          color: var(--accent);
+        }
+      }
+      .is-before-active,
+      .is-after-active {
+        background-color: var(--tab-background);
+        .workspace-tab-header-inner {
+          background-color: var(--tab-background);
+        }
+      }
+    }
+
+    // Main sidebar (on top of workspace-tabs)
+    .workspace-leaf {
+      background-color: var(--sidebar-background);
+
+      // Icons
+      .nav-header {
+        .nav-action-button {
+          color: var(--icon-normal);
+
+          svg {
+            fill: var(--icon-normal);
+            path {
+              stroke: var(--icon-normal);
+            }
+          }
+          &:hover {
+            svg {
+              fill: var(--icon-hover);
+
+              path {
+                stroke: var(--icon-hover);
+              }
+            }
+          }
+
+          &:hover,
+          &:focus {
+            color: var(--icon-hover);
+          }
+        }
+      }
+
+      // Lists
+      .tree-item {
+        span {
+          color: var(--text-mute);
+        }
+        .tree-item-flair {
+          color: var(--purple-light-3);
+          background-color: var(--black-dark-1);
+        }
+
+        &:hover {
+          .tree-item-self {
+            background-color: var(--black-light-1);
+
+            span {
+              color: var(--accent);
+            }
+          }
+        }
+      }
+      .tree-item-self {
+        color: var(--text-mute);
+
+        .tree-item-flair {
+          background-color: var(--black-dark-1);
+          color: var(--purple-light-3);
+        }
+
+        &:hover {
+          background-color: var(--black-light-1);
+          color: var(--accent);
+
+          .tree-item-flair {
+            background-color: var(--black-dark-1);
+            color: var(--accent);
+          }
+        }
+      }
+    }
+  }
+}

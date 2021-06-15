@@ -1,3 +1,9 @@
+:root {
+  --editor-icons: var(--white-dark-3);
+  --editor-title: var(--white);
+  --line-number: var(--purple-dark-3);
+  --current-line-bg: var(--black);
+}
 .mod-root {
   // Workspace leaf is each editor: mod-active class is applied to the active editor
   .workspace-leaf {
@@ -6,66 +12,68 @@
       // ----------------------------------- Editor header
       .view-header {
         // Important used to avoid crazy nesting
-        background-color: var(--black) !important;
-        border-bottom: 2px solid var(--black-light-two) !important;
+        background-color: var(--editor-background) !important;
         border-top: none;
+        border-bottom: var(--border) !important;
 
         // File icon
         .view-header-icon {
-          color: var(--purple);
+          color: var(--editor-icons);
           &:hover {
-            color: var(--accent);
+            color: var(--icon-hover);
           }
         }
 
         .view-header-title {
-          color: var(--purple-light-two);
+          color: var(--editor-title);
         }
 
         // Action icons
         .view-action {
-          color: var(--white-dark-two);
+          color: var(--editor-icons);
           &:hover {
-            color: var(--accent);
+            color: var(--icon-hover);
           }
         }
       }
 
       // ------------------------------------ Content
       .view-content {
-        background-color: var(--black);
+        background-color: var(--editor-background);
 
         // Empty window content
         .empty-state-container {
-          color: var(--white-dark-two);
+          color: var(--text-mute);
 
           .empty-state-action {
-            color: var(--white-dark-two);
+            color: var(--text-mute);
 
             &:hover {
-              color: var(--accent);
+              color: var(--icon-hover);
             }
           }
         }
 
         // -------------------------------- Editor styles
         .markdown-source-view {
+          font-size: var(--par);
           // Cursor insert mode
           .CodeMirror-cursor {
-            border-left: 1px solid var(--white-dark-two);
+            border-left: 1px solid var(--accent);
           }
 
           // Cursor normal
           .cm-fat-cursor .CodeMirror-cursor {
-            background: var(--purple);
+            background: var(--accent);
           }
 
           // Gutters
           .CodeMirror-gutters .CodeMirror-gutter {
-            background-color: var(--black);
+            background-color: var(--editor-background);
           }
           .CodeMirror-linenumber {
-            color: var(--purple-dark-two);
+            color: var(--line-number);
+            font-size: var(--par);
           }
 
           //---------------------  Content styles
@@ -73,10 +81,10 @@
 
           // ------ Active line styles
           .CodeMirror-activeline {
-            background-color: var(--black-light-one);
+            background-color: var(--current-line-bg);
 
             .CodeMirror-linenumber {
-              color: var(--purple-light-one);
+              color: var(--accent);
             }
           }
         }

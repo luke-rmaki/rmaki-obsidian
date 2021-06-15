@@ -4,14 +4,18 @@
     Nested in each element is a class .cm-formatting which styles the formatting markup
 */
 
+:root {
+  --heading-color: var(--purple);
+  --formatting: var(--accent);
+  --list: var(--purple);
+}
+
 // ------------- BASE LINE STYLING
 .CodeMirror-line {
-  font-size: var(--par);
-
   // ---- HEADINGS
   &.HyperMD-header {
     .cm-header {
-      font-size: var(--heading);
+      font-size: var(--heading) !important;
       color: var(--purple);
     }
     .cm-formatting {
@@ -29,7 +33,7 @@
   //---- BOLD AND ITALICS
   .cm-em,
   .cm-strong {
-    color: var(--purple-light-two);
+    color: var(--purple-light-2);
     &.cm-formatting {
       color: var(--accent);
     }
@@ -42,7 +46,7 @@
   }
   .cm-formatting + .cm-highlight {
     background-color: var(--accent);
-    color: var(--black);
+    color: var(--black-dark-1);
   }
 
   // ---- QUOTE
@@ -54,7 +58,7 @@
 
   // ---- CODE BLOCK
   &.HyperMD-codeblock {
-    background-color: var(--black-light-one);
+    background-color: var(--black-light-1);
     color: var(--white);
     &.HyperMD-codeblock-begin,
     &.HyperMD-codeblock-end {
@@ -81,6 +85,6 @@
   // ---- FRONTMATTER
   .cm-hmd-frontmatter {
     font-size: var(--small);
-    color: var(--white-dark-three);
+    color: var(--text-mute);
   }
 }

@@ -1,0 +1,12 @@
+.status-bar {
+  border-top: var(--border);
+  background-color: var(--editor-background);
+
+  .status-bar-item {
+    color: var(--text-mute);
+
+    &.mod-clickable:hover {
+      color: var(--accent);
+    }
+  }
+}

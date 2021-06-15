@@ -5,78 +5,54 @@
   --l-purple: 48%;
   --h-black: 240;
   --s-black: 7%;
-  --l-black: 10%;
+  --l-black: 12%;
   --h-white: 212;
   --s-white: 61%;
   --l-white: 91%;
-
-  --step-one: 2.5%;
-  --step-two: 5%;
-  --step-two: 10%;
 
   --purple: hsl(var(--h-purple), var(--s-purple), var(--l-purple));
   --black: hsl(var(--h-black), var(--s-black), var(--l-black));
   --accent: hsl(164, 68%, 72%);
   --white: hsl(var(--h-white), var(--s-white), var(--l-white));
 
-  --purple-dark-one: hsl(
-    var(--h-purple),
-    var(--s-purple),
-    calc(var(--l-purple) - var(--step-one))
-  );
-  --purple-dark-two: hsl(
-    var(--h-purple),
-    var(--s-purple),
-    calc(var(--l-purple) - var(--step-two))
-  );
+  --white-dark-1: hsl(212, 61%, 86%);
+  --white-dark-2: hsl(212, 61%, 81%);
+  --white-dark-3: hsl(211, 19%, 60%);
 
-  --purple-light-one: hsl(
-    var(--h-purple),
-    var(--s-purple),
-    calc(var(--l-purple) + var(--step-one))
-  );
-  --purple-light-two: hsl(
-    var(--h-purple),
-    var(--s-purple),
-    calc(var(--l-purple) + var(--step-two))
-  );
+  --black-light-1: hsl(240, 7%, 17%);
+  --black-light-2: hsl(240, 7%, 22%);
+  --black-light-3: hsl(240, 7%, 27%);
 
-  --black-light-one: hsl(
-    var(--h-black),
-    var(--s-black),
-    calc(var(--l-black) + var(--step-one))
-  );
-  --black-light-two: hsl(
-    var(--h-black),
-    var(--s-black),
-    calc(var(--l-black) + var(--step-two))
-  );
+  --black-dark-1: hsl(240, 7%, 7%);
 
-  --white-dark-one: hsl(
-    var(--h-white),
-    var(--s-white),
-    calc(var(--l-white) - var(--step-one))
-  );
-  --white-dark-two: hsl(
-    var(--h-white),
-    var(--s-white),
-    calc(var(--l-white) - var(--step-two))
-  );
-  --white-dark-three: hsl(
-    var(--h-white),
-    var(--s-white),
-    calc(var(--l-white) - var(--step-three))
-  );
+  --purple-dark-1: hsl(246, 28%, 43%);
+  --purple-dark-2: hsl(246, 28%, 38%);
+  --purple-dark-3: hsl(246, 28%, 33%);
+  --purple-dark-4: hsl(246, 28%, 28%);
+  --purple-dark-5: hsl(246, 28%, 23%);
+  --purple-dark-6: hsl(246, 28%, 18%);
 
+  --purple-light-1: hsl(246, 28%, 53%);
+  --purple-light-2: hsl(246, 28%, 58%);
+  --purple-light-3: hsl(246, 28%, 63%);
+
+  --border: 0.5px solid var(--purple);
+  --editor-background: var(--black-dark-1);
+  --icon-normal: var(--purple);
+  --icon-hover: var(--accent);
+  --icon-accent: var(--accent);
+  --text: var(--white);
+  --text-mute: var(--white-dark-3);
+  --popup-dark: var(--black-dark-1);
+  --ribbon-background: var(--black-dark-1);
+  --sidebar-background: var(--black);
+  --scrollbar-bg: var(--purple);
+
+  // --------------------------------------------- Font
   --font: "Fira Code", monospace;
 
   // font sizes
-  --par: 1rem;
+  --par: 0.9rem;
   --heading: 1.1rem;
-  --small: 0.8rem;
-  // --h2: 1.35rem;
-  // --h3: 1.3rem;
-  // --h4: 1.2rem;
-  // --h5: 1.1rem;
-  // --h6: 1.05rem;
+  --small: 0.7rem;
 }

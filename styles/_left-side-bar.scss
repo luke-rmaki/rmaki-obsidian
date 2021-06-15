@@ -1,30 +1,23 @@
-// --------------------------------------------------------------- LEFT RIBBON
-// Ribbon container
-.side-dock-ribbon.mod-left {
-  background-color: var(--black);
-  // Ribbon buttons
-  .side-dock-ribbon-action {
-    color: var(--purple-dark-one);
-
-    &:hover {
-      color: var(--accent);
-    }
-  }
-  // Arrow
-  .workspace-ribbon-collapse-btn {
-    color: var(--accent);
-  }
+:root {
+  --tab-background: var(--black-dark-1);
+  --explorer-active-bg: var(--accent);
+  --explorer-active: var(--black);
+  --explorer-hover: var(--black-light-1);
+  --search-bar: var(--black-light-1);
+  --search-hover: var(--black-dark-1);
 }
 
 // ---------------------------------------------------------------- LEFT SIDEBAR
 .workspace-split.mod-left-split {
-  background-color: var(--black);
+  background-color: var(--sidebar-background);
 
   // resize hr between left sidebar and editor
   .workspace-leaf-resize-handle {
-    background-color: var(--purple-dark-two);
+    background-color: var(--purple-dark-2);
+    width: 2px;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: var(--accent);
     }
   }
@@ -34,11 +27,11 @@
 
     // Header section
     .workspace-tab-header-container {
-      background-color: var(--black-light-two);
+      background-color: var(--tab-background);
 
       // currently selected tab
       .workspace-tab-header.is-active {
-        color: var(--accent);
+        color: var(--icon-hover);
       }
       .is-active {
         background-color: var(--black) !important;
@@ -46,8 +39,8 @@
 
       // all tabs
       .workspace-tab-header {
-        color: var(--purple-dark-one);
-        background-color: var(--black-light-two);
+        color: var(--icon-normal);
+        background-color: var(--tab-background);
 
         &:hover,
         &:focus {
@@ -56,25 +49,25 @@
       }
       .is-before-active,
       .is-after-active {
-        background-color: var(--black-light-two);
+        background-color: var(--tab-background);
         .workspace-tab-header-inner {
-          background-color: var(--black-light-two);
+          background-color: var(--tab-background);
         }
       }
     }
 
     // Main sidebar (on top of workspace-tabs)
     .workspace-leaf {
-      background-color: var(--black);
+      background-color: var(--sidebar-background);
 
       // New file/folder .e.c.t
       .nav-header {
         .nav-action-button {
-          color: var(--purple-dark-two);
+          color: var(--icon-normal);
 
           &:hover,
           &:focus {
-            color: var(--accent);
+            color: var(--icon-hover);
           }
         }
       }
@@ -85,32 +78,47 @@
         .nav-folder-title {
           &:hover,
           &focus {
-            background-color: var(--black-light-two);
+            background-color: var(--explorer-hover);
             .nav-folder-title-content {
-              background-color: var(--black-light-two);
+              background-color: var(--explorer-hover);
               color: var(--accent);
             }
           }
           .nav-folder-title-content {
-            color: var(--white-dark-one);
+            color: var(--text-mute);
             font-weight: bold;
           }
         }
 
         // file names
         .nav-file {
-          &:hover,
-          &focus {
-            .nav-file-title,
-            .nav-file-title-content {
-              background-color: var(--black-light-two);
+          .nav-file,
+          .nav-file-title {
+            color: var(--text-mute);
+            font-style: italic;
+
+            &:hover,
+            &:focus {
               color: var(--accent);
+              background-color: var(--explorer-hover);
             }
           }
-          .nav-file-title,
-          .nav-file-title-content {
-            color: var(--white-dark-one);
-            font-style: italic;
+
+          .is-active {
+            background-color: var(--explorer-active-bg);
+
+            > div {
+              color: var(--explorer-active);
+            }
+
+            &:hover,
+            &:focus {
+              background-color: var(--explorer-active-bg);
+
+              > div {
+                color: var(--explorer-active);
+              }
+            }
           }
         }
       }
@@ -119,36 +127,40 @@
       .workspace-leaf-content[data-type="search"] {
         // buttons
         .nav-action-button {
-          color: var(--purple);
+          color: var(--icon-normal);
 
           &.is-active {
-            color: var(--accent);
-            background-color: var(--black);
-            border: 1px solid var(--accent);
+            color: var(--icon-hover);
+            background-color: var(--sidebar-background);
+            border: 1px solid var(--icon-hover);
           }
 
           &:hover {
-            color: var(--purple-light-two);
+            color: var(--icon-hover);
           }
         }
         // search bar
         .search-input-container input {
-          background-color: var(--black-light-one);
-          color: var(--white-dark-one);
+          background-color: var(--search-bar);
+          color: var(--text-mute);
         }
         // search results list
         .search-result-container {
-          background-color: var(--black);
+          background-color: var(--sidebar-background);
 
           // search result item
           .search-result {
             // search result title
             .tree-item-inner {
-              color: var(--white-dark-one);
+              color: var(--text-mute);
             }
             // search result body
             .search-result-file-match {
-              color: var(--white-dark-one);
+              color: var(--text-mute);
+
+              &:hover {
+                background-color: var(--search-hover);
+              }
 
               // Search highlight
               .search-result-file-matched-text {

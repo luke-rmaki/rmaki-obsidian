@@ -19,6 +19,10 @@ body {
 }
 
 @import "titlebar";
+@import "ribbons";
 @import "left-side-bar";
 @import "main-body";
 @import "text-styles";
+@import "preview.scss";
+@import "right-side-bar";
+@import "status-bar";

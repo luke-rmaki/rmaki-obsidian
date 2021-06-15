@@ -1,0 +1,33 @@
+.markdown-preview-view {
+  font-size: var(--par);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--accent);
+  }
+  p,
+  span,
+  ul,
+  ol {
+    color: var(--text);
+  }
+
+  mark {
+    background-color: var(--accent);
+    color: var(--black-dark-1);
+  }
+
+  a {
+    color: var(--purple-light-3);
+  }
+
+  blockquote {
+    border: solid 1px var(--purple);
+    border-left-width: 5px;
+    color: var(--text);
+  }
+}
