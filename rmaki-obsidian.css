@@ -293,6 +293,8 @@ body {
     border: solid 1px var(--purple);
     border-left-width: 5px;
     color: var(--text); }
+  .markdown-preview-view table th {
+    color: var(--accent); }
 
 .workspace-split.mod-right-split {
   background-color: var(--sidebar-background); }
