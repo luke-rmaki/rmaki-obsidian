@@ -223,6 +223,9 @@ body {
   --formatting: var(--accent);
   --list: var(--purple); }
 
+.CodeMirror-line span {
+  color: var(--text); }
+
 .CodeMirror-line.HyperMD-header .cm-header {
   font-size: var(--heading) !important;
   color: var(--purple); }

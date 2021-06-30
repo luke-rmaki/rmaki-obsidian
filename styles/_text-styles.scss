@@ -12,6 +12,10 @@
 
 // ------------- BASE LINE STYLING
 .CodeMirror-line {
+  span {
+    color: var(--text);
+  }
+
   // ---- HEADINGS
   &.HyperMD-header {
     .cm-header {
