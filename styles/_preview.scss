@@ -33,4 +33,13 @@
   table th {
     color: var(--accent);
   }
+
+  hr {
+    border-color: var(--purple-dark-3);
+  }
+
+  // Display container
+  .markdown-preview-section {
+    max-width: 1000px !important;
+  }
 }

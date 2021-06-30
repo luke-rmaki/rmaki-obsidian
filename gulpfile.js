@@ -1,21 +1,23 @@
-const gulp = require("gulp");
+const {src, dest, watch, series} = require("gulp");
 const sass = require("gulp-sass");
+const rename = require("gulp-rename")
 const concat = require("gulp-concat");
 require('dotenv').config();
 
 sass.compiler = require("node-sass");
 
-gulp.task("sass", function () {
-  return gulp
-    .src("./styles/**/*.scss")
+function processSass() {
+  src("./styles/**/*.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(concat("rmaki-obsidian.css"))
-    .pipe(gulp.dest("./"))
-    .pipe(
-      gulp.dest(process.env.DEST)
-    );
-});
+    .pipe(concat("obsidian.css"))
+    .pipe(dest("./"))
+    .pipe(rename("./Rmaki-Obsidian.css"))
+    .pipe(dest("./"))
+    .pipe(dest(process.env.DEST))
+}
 
-gulp.task("sass:watch", function () {
-  gulp.watch("./styles/**/*.scss", gulp.series('sass'));
-});
+
+
+exports.default = () => {
+  watch("./styles/**/*.scss", {ignoreInitial: false}, series(processSass));
+}

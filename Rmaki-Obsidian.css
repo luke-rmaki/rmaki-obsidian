@@ -298,6 +298,10 @@ body {
     color: var(--text); }
   .markdown-preview-view table th {
     color: var(--accent); }
+  .markdown-preview-view hr {
+    border-color: var(--purple-dark-3); }
+  .markdown-preview-view .markdown-preview-section {
+    max-width: 1000px !important; }
 
 .workspace-split.mod-right-split {
   background-color: var(--sidebar-background); }
