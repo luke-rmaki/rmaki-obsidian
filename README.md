@@ -2,7 +2,7 @@
 
 > Dark theme for [Obsidian](https://obsidian.md/)
 
-![Screenshot of the theme]('./../screenshot.jpg)
+![Screenshot of the theme]('./../screenshot.png)
 
 Tested with Obsidian v.0.12.8
 
