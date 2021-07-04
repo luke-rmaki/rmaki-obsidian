@@ -19,5 +19,5 @@ function processSass() {
 
 
 exports.default = () => {
-  watch("./styles/**/*.scss", {ignoreInitial: false}, series(processSass));
+  watch("./styles/*.scss", {ignoreInitial: false}, series(processSass));
 }

@@ -244,8 +244,8 @@ body {
     color: var(--accent); }
 
 .CodeMirror-line .cm-formatting.cm-highlight {
-  color: var(--accent);
-  background-color: var(--black); }
+  background-color: var(--accent);
+  color: var(--black-dark-1); }
 
 .CodeMirror-line .cm-formatting + .cm-highlight {
   background-color: var(--accent);
@@ -276,12 +276,16 @@ body {
 .markdown-preview-view {
   font-size: var(--par); }
   .markdown-preview-view h1,
-  .markdown-preview-view h2,
   .markdown-preview-view h3,
-  .markdown-preview-view h4,
-  .markdown-preview-view h5,
-  .markdown-preview-view h6 {
+  .markdown-preview-view h5 {
     color: var(--accent); }
+  .markdown-preview-view h2,
+  .markdown-preview-view h4,
+  .markdown-preview-view h6 {
+    color: var(--purple);
+    font-style: italic; }
+  .markdown-preview-view h2 {
+    border-bottom: 1px solid var(--accent); }
   .markdown-preview-view p,
   .markdown-preview-view span,
   .markdown-preview-view ul,

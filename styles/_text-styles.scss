@@ -45,8 +45,8 @@
 
   //---- HIGHLIGHT
   .cm-formatting.cm-highlight {
-    color: var(--accent);
-    background-color: var(--black);
+    background-color: var(--accent);
+    color: var(--black-dark-1);
   }
   .cm-formatting + .cm-highlight {
     background-color: var(--accent);
