@@ -16,6 +16,10 @@
         border-top: none;
         border-bottom: var(--border) !important;
 
+        .view-header-title-container::after {
+          background: var(--editor-background) !important;
+        }
+
         // File icon
         .view-header-icon {
           color: var(--editor-icons);
