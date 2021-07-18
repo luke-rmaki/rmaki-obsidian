@@ -4,7 +4,7 @@
 
 ![Screenshot of the theme]('./../screenshot.png)
 
-Tested with Obsidian v.0.12.8
+Tested with Obsidian Desktop v.0.12.8 and Obsidian Mobile (Android) v.1.0.3
 
 Uses [Fira Code](https://fonts.google.com/specimen/Fira+Code).
 
@@ -28,15 +28,20 @@ Twitter: [luke-rmaki](https://twitter.com/luke_rmaki)
 - [ ] Mobile active folder style
 
 ## How to install
+### Option 1 (Add from Obsidian)
+- This theme is now listed in Obsidian's community themes
+- Open Obsidian -> Settings -> Appearance 
+- Browser Community themes and search for Rmaki
 
-### Option 1 (Download):
+
+### Option 2 (Download):
 
 1. Download the `Rmaki-Obsidian.css` file
 2. Copy into your themes folder
 3. Open Settings -> Appearances
 4. Change Theme to 'Rmaki-Obsidian'
 
-### Option 2 (Build):
+### Option 3 (Build):
 
 1. Clone the repo
 2. Navigate to folder
