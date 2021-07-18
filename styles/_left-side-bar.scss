@@ -174,3 +174,14 @@
     }
   }
 }
+
+// Mobile
+.workspace-drawer {
+  .workspace-drawer-inner {
+    background: var(--sidebar-background) !important;
+
+    .nav-folder-title {
+      color: var(--white);
+    }
+  }
+}

@@ -168,6 +168,9 @@ body {
             background-color: var(--accent);
             color: var(--black); }
 
+.workspace-drawer .workspace-drawer-inner {
+  background: var(--sidebar-background) !important; }
+
 :root {
   --editor-icons: var(--white-dark-3);
   --editor-title: var(--white);

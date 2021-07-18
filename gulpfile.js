@@ -20,5 +20,5 @@ function processSass() {
 exports.build = processSass;
 
 exports.default = () => {
-  watch("./styles/**/*.scss", {ignoreInitial: false}, series(processSass));
+  watch("./styles/*.scss", {ignoreInitial: false}, series(processSass));
 }
