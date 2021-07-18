@@ -71,13 +71,33 @@
             background: var(--accent);
           }
 
-          // Gutters
+          // Gutters Desktop
           .CodeMirror-gutters .CodeMirror-gutter {
             background-color: var(--editor-background);
           }
           .CodeMirror-linenumber {
             color: var(--line-number);
             font-size: var(--par);
+          }
+
+          // Gutters Mobile
+          .cm-gutters {
+            background-color: var(--editor-background) !important;
+            .cm-foldGutter {
+              background: var(--editor-background);
+
+              span[title="Unfold line"] {
+                color: var(--purple); // doesn't work
+              }
+            }
+
+            .cm-lineNumbers {
+              background: var(--editor-background);
+
+              .cm-gutterElement {
+                color: var(--line-number);
+              }
+            }
           }
 
           //---------------------  Content styles

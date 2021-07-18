@@ -240,6 +240,16 @@ body {
     .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-linenumber {
       color: var(--line-number);
       font-size: var(--par); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-gutters {
+      background-color: var(--editor-background) !important; }
+      .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-gutters .cm-foldGutter {
+        background: var(--editor-background); }
+        .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-gutters .cm-foldGutter span[title="Unfold line"] {
+          color: var(--purple); }
+      .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-gutters .cm-lineNumbers {
+        background: var(--editor-background); }
+        .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-gutters .cm-lineNumbers .cm-gutterElement {
+          color: var(--line-number); }
     .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-activeline {
       background-color: var(--current-line-bg); }
       .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-activeline .CodeMirror-linenumber {
@@ -255,53 +265,71 @@ body {
   --formatting: var(--accent);
   --list: var(--purple); }
 
-.CodeMirror-line span {
+.CodeMirror-line span,
+.cm-line span {
   color: var(--text); }
 
-.CodeMirror-line.HyperMD-header .cm-header {
+.CodeMirror-line.HyperMD-header .cm-header,
+.cm-line.HyperMD-header .cm-header {
   font-size: var(--heading) !important;
   color: var(--purple); }
 
-.CodeMirror-line.HyperMD-header .cm-formatting {
+.CodeMirror-line.HyperMD-header .cm-formatting,
+.cm-line.HyperMD-header .cm-formatting {
   color: var(--accent); }
 
-.CodeMirror-line.HyperMD-list-line .cm-formatting {
+.CodeMirror-line.HyperMD-list-line .cm-formatting,
+.cm-line.HyperMD-list-line .cm-formatting {
   color: var(--purple); }
 
 .CodeMirror-line .cm-em,
-.CodeMirror-line .cm-strong {
+.CodeMirror-line .cm-strong,
+.cm-line .cm-em,
+.cm-line .cm-strong {
   color: var(--purple-light-2); }
   .CodeMirror-line .cm-em.cm-formatting,
-  .CodeMirror-line .cm-strong.cm-formatting {
+  .CodeMirror-line .cm-strong.cm-formatting,
+  .cm-line .cm-em.cm-formatting,
+  .cm-line .cm-strong.cm-formatting {
     color: var(--accent); }
 
-.CodeMirror-line .cm-formatting.cm-highlight {
+.CodeMirror-line .cm-formatting.cm-highlight,
+.cm-line .cm-formatting.cm-highlight {
   background-color: var(--accent);
   color: var(--black-dark-1); }
 
-.CodeMirror-line .cm-formatting + .cm-highlight {
+.CodeMirror-line .cm-formatting + .cm-highlight,
+.cm-line .cm-formatting + .cm-highlight {
   background-color: var(--accent);
   color: var(--black-dark-1); }
 
-.CodeMirror-line.HyperMD-quote .cm-formatting {
+.CodeMirror-line.HyperMD-quote .cm-formatting,
+.cm-line.HyperMD-quote .cm-formatting {
   color: var(--accent); }
 
-.CodeMirror-line.HyperMD-codeblock {
+.CodeMirror-line.HyperMD-codeblock,
+.cm-line.HyperMD-codeblock {
   background-color: var(--black-light-1);
   color: var(--white); }
-  .CodeMirror-line.HyperMD-codeblock.HyperMD-codeblock-begin, .CodeMirror-line.HyperMD-codeblock.HyperMD-codeblock-end {
+  .CodeMirror-line.HyperMD-codeblock.HyperMD-codeblock-begin, .CodeMirror-line.HyperMD-codeblock.HyperMD-codeblock-end,
+  .cm-line.HyperMD-codeblock.HyperMD-codeblock-begin,
+  .cm-line.HyperMD-codeblock.HyperMD-codeblock-end {
     color: var(--accent); }
 
-.CodeMirror-line.HyperMD-hr .cm-hr {
+.CodeMirror-line.HyperMD-hr .cm-hr,
+.cm-line.HyperMD-hr .cm-hr {
   color: var(--accent); }
 
-.CodeMirror-line span.cm-formatting-link {
+.CodeMirror-line span.cm-formatting-link,
+.cm-line span.cm-formatting-link {
   color: var(--purple); }
 
-.CodeMirror-line .cm-formatting-link + .cm-hmd-internal-link {
+.CodeMirror-line .cm-formatting-link + .cm-hmd-internal-link,
+.cm-line .cm-formatting-link + .cm-hmd-internal-link {
   color: var(--accent); }
 
-.CodeMirror-line .cm-hmd-frontmatter {
+.CodeMirror-line .cm-hmd-frontmatter,
+.cm-line .cm-hmd-frontmatter {
   font-size: var(--small);
   color: var(--text-mute); }
 

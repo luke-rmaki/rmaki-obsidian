@@ -11,7 +11,8 @@
 }
 
 // ------------- BASE LINE STYLING
-.CodeMirror-line {
+.CodeMirror-line,
+.cm-line {
   span {
     color: var(--text);
   }
