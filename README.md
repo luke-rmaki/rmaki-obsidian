@@ -25,7 +25,7 @@ Twitter: [luke-rmaki](https://twitter.com/luke_rmaki)
 - [ ] Outline hover
 - [ ] Editor popups
 - [ ] Graph view
-- [ ] Mobile is broken
+- [ ] Mobile active folder style
 
 ## How to install
 

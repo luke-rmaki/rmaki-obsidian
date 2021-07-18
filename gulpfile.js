@@ -1,4 +1,4 @@
-const {src, dest, watch, series} = require("gulp");
+const {src, dest, watch} = require("gulp");
 const sass = require("gulp-sass");
 const rename = require("gulp-rename")
 const concat = require("gulp-concat");
@@ -7,7 +7,7 @@ require('dotenv').config();
 sass.compiler = require("node-sass");
 
 function processSass() {
-  src("./styles/**/*.scss")
+  return src("./styles/**/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(concat("obsidian.css"))
     .pipe(dest("./"))
@@ -20,5 +20,5 @@ function processSass() {
 exports.build = processSass;
 
 exports.default = () => {
-  watch("./styles/*.scss", {ignoreInitial: false}, series(processSass));
+  watch("./styles/**/*.scss", {ignoreInitial: false}, processSass);
 }

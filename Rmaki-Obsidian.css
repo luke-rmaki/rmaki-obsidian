@@ -170,6 +170,33 @@ body {
 
 .workspace-drawer .workspace-drawer-inner {
   background: var(--sidebar-background) !important; }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-header {
+    color: var(--purple-light-2); }
+    .workspace-drawer .workspace-drawer-inner .workspace-drawer-header .workspace-drawer-header-info {
+      color: var(--white); }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-tab-options .workspace-drawer-tab-option-item-icon {
+    color: var(--purple); }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-tab-options .workspace-drawer-tab-option-item-title {
+    color: var(--white); }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-active-tab-container .workspace-drawer-active-tab-header .workspace-drawer-active-tab-back-icon {
+    color: var(--accent); }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-active-tab-container .workspace-drawer-active-tab-header .workspace-drawer-active-tab-icon {
+    color: var(--purple); }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-active-tab-container .workspace-drawer-active-tab-header .workspace-drawer-active-tab-title {
+    color: var(--white); }
+  .workspace-drawer .workspace-drawer-inner .pin {
+    color: var(--text-mute); }
+  .workspace-drawer .workspace-drawer-inner .nav-buttons-container .nav-action-button {
+    color: var(--purple); }
+  .workspace-drawer .workspace-drawer-inner .nav-folder-title {
+    color: var(--text-mute);
+    font-weight: bold; }
+  .workspace-drawer .workspace-drawer-inner .nav-file-title {
+    color: var(--text-mute);
+    font-style: italic; }
+    .workspace-drawer .workspace-drawer-inner .nav-file-title.is-active {
+      background: var(--explorer-active-bg);
+      color: var(--explorer-active); }
 
 :root {
   --editor-icons: var(--white-dark-3);
@@ -281,11 +308,16 @@ body {
 .markdown-preview-view {
   font-size: var(--par); }
   .markdown-preview-view h1,
-  .markdown-preview-view h3,
   .markdown-preview-view h5 {
     color: var(--accent); }
+  .markdown-preview-view h3 {
+    color: var(--purple-light-3);
+    font-weight: normal; }
+  .markdown-preview-view h4 {
+    color: var(--purple);
+    font-weight: normal;
+    font-style: italic; }
   .markdown-preview-view h2,
-  .markdown-preview-view h4,
   .markdown-preview-view h6 {
     color: var(--purple);
     font-style: italic; }

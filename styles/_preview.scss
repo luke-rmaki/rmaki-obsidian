@@ -2,13 +2,22 @@
   font-size: var(--par);
 
   h1,
-  h3,
   h5 {
     color: var(--accent);
   }
 
+  h3 {
+    color: var(--purple-light-3);
+    font-weight: normal;
+  }
+
+  h4 {
+    color: var(--purple);
+    font-weight: normal;
+    font-style: italic;
+  }
+
   h2,
-  h4,
   h6 {
     color: var(--purple);
     font-style: italic;
