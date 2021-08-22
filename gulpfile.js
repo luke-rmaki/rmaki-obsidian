@@ -7,6 +7,7 @@ require('dotenv').config();
 sass.compiler = require("node-sass");
 
 function processSass() {
+  console.log(process.env.DEST)
   return src("./styles/**/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(concat("obsidian.css"))

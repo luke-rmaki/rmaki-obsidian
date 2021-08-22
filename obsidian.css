@@ -233,6 +233,8 @@ body {
     font-size: var(--par); }
     .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-cursor {
       border-left: 1px solid var(--accent); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror {
+      max-width: 70vw; }
     .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-fat-cursor .CodeMirror-cursor {
       background: var(--accent); }
     .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-gutters .CodeMirror-gutter {

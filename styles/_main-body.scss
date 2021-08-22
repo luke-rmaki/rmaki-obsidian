@@ -5,6 +5,7 @@
   --current-line-bg: var(--black);
 }
 .mod-root {
+
   // Workspace leaf is each editor: mod-active class is applied to the active editor
   .workspace-leaf {
     // Workspace leaf content has a data attribute for empty if there is no file
@@ -64,6 +65,10 @@
           // Cursor insert mode
           .CodeMirror-cursor {
             border-left: 1px solid var(--accent);
+          }
+
+          .CodeMirror {
+            max-width: 70vw;
           }
 
           // Cursor normal
