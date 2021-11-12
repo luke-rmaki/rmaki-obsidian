@@ -1,8 +1,8 @@
-/* 
+/**
   CodeMirror-line is the base line class
   Each element type class has the form .HyperMD-[element type]
     Nested in each element is a class .cm-formatting which styles the formatting markup
- */
+*/
 
 :root {
   --heading-color: var(--purple);
@@ -10,91 +10,85 @@
   --list: var(--purple);
 }
 
- /* ------------- BASE LINE STYLING */
+// ------------- BASE LINE STYLING
 .CodeMirror-line,
 .cm-line {
-  & span {
+  span {
     color: var(--text);
   }
 
-   /* ---- HEADINGS */
+  // ---- HEADINGS
   &.HyperMD-header {
-    &.cm-header {
+    .cm-header {
       font-size: var(--heading) !important;
       color: var(--purple);
     }
-    &.cm-formatting {
+    .cm-formatting {
       color: var(--accent);
     }
   }
 
-   /* ---- LIST */
+  // ---- LIST
   &.HyperMD-list-line {
-    &.cm-formatting {
+    .cm-formatting {
       color: var(--purple);
     }
   }
 
-   /* BOLD AND ITALICS */
-  &.cm-em,
-  &.cm-strong {
+  //---- BOLD AND ITALICS
+  .cm-em,
+  .cm-strong {
     color: var(--purple-light-2);
     &.cm-formatting {
       color: var(--accent);
     }
   }
 
-   /* HIGHLIGHT */
-  &.cm-formatting.cm-highlight {
+  //---- HIGHLIGHT
+  .cm-formatting.cm-highlight {
     background-color: var(--accent);
     color: var(--black-dark-1);
   }
-  &.cm-formatting + .cm-highlight {
+  .cm-formatting + .cm-highlight {
     background-color: var(--accent);
     color: var(--black-dark-1);
   }
 
-   /* ---- QUOTE */
-   /* TODO: Check this */
-  @nest & .HyperMD-quote {
+  // ---- QUOTE
+  &.HyperMD-quote {
     .cm-formatting {
       color: var(--accent);
     }
   }
 
-   /* ---- CODE BLOCK */
+  // ---- CODE BLOCK
   &.HyperMD-codeblock {
-    background-color: var(--black);
+    background-color: var(--black-light-1);
     color: var(--white);
-    /* TODO: Check this */
-    @nest & .HyperMD-codeblock-begin {
-      color: var(--accent);
-    }
-    @nest & .HyperMD-codeblock-end {
+    &.HyperMD-codeblock-begin,
+    &.HyperMD-codeblock-end {
       color: var(--accent);
     }
   }
 
-   /* ---- HR */
-   /* TODO: Check this */
-  @nest & .HyperMD-hr {
+  // ---- HR
+  &.HyperMD-hr {
     .cm-hr {
       color: var(--accent);
     }
   }
 
-   /* ---- LINKS */
-  & span.cm-formatting-link {
+  // ---- LINKS
+  span.cm-formatting-link {
     color: var(--purple);
   }
 
-  /* TODO: Here */
-  &.cm-formatting-link + .cm-hmd-internal-link {
+  .cm-formatting-link + .cm-hmd-internal-link {
     color: var(--accent);
   }
 
-   /* ---- FRONTMATTER */
-  &.cm-hmd-frontmatter {
+  // ---- FRONTMATTER
+  .cm-hmd-frontmatter {
     font-size: var(--small);
     color: var(--text-mute);
   }

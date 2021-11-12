@@ -1,5 +1,3 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 /* 
 .----. .-.   .-.  .--.  .-. .-..-.    .----. .----.  .----..-..----. .-.  .--.  .-. .-.
 | {}  }|  `.'  | / {} \ | |/ / | |   /  {}  \| {}  }{ {__  | || {}  \| | / {} \ |  `| |
@@ -7,14 +5,14 @@
 `-' `-'`-' ` `-'`-'  `-'`-' `-'`-'    `----' `----' `----' `-'`----' `-'`-'  `-'`-' `-'
 
 Made by: Luke Ruokaismaki
-Version: 1.1.0
+Version: 0.2
 Repo: https://github.com/luke-rmaki/rmaki-obsidian
-Built with PostCSS and Gulp
+Built with SCSS and Gulp
 
 
 */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 :root {
-  /* ---------------------------------------- Colors */
   --h-purple: 246;
   --s-purple: 28%;
   --l-purple: 48%;
@@ -24,33 +22,26 @@ Built with PostCSS and Gulp
   --h-white: 212;
   --s-white: 61%;
   --l-white: 91%;
-
   --purple: hsl(var(--h-purple), var(--s-purple), var(--l-purple));
   --black: hsl(var(--h-black), var(--s-black), var(--l-black));
   --accent: hsl(164, 68%, 72%);
   --white: hsl(var(--h-white), var(--s-white), var(--l-white));
-
   --white-dark-1: hsl(212, 61%, 86%);
   --white-dark-2: hsl(212, 61%, 81%);
   --white-dark-3: hsl(211, 19%, 60%);
-
   --black-light-1: hsl(240, 7%, 17%);
   --black-light-2: hsl(240, 7%, 22%);
   --black-light-3: hsl(240, 7%, 27%);
-
   --black-dark-1: hsl(240, 7%, 7%);
-
   --purple-dark-1: hsl(246, 28%, 43%);
   --purple-dark-2: hsl(246, 28%, 38%);
   --purple-dark-3: hsl(246, 28%, 33%);
   --purple-dark-4: hsl(246, 28%, 28%);
   --purple-dark-5: hsl(246, 28%, 23%);
   --purple-dark-6: hsl(246, 28%, 18%);
-
   --purple-light-1: hsl(246, 28%, 53%);
   --purple-light-2: hsl(246, 28%, 58%);
   --purple-light-3: hsl(246, 28%, 63%);
-
   --border: 0.5px solid var(--purple);
   --editor-background: var(--black-dark-1);
   --icon-normal: var(--purple);
@@ -62,877 +53,392 @@ Built with PostCSS and Gulp
   --ribbon-background: var(--black-dark-1);
   --sidebar-background: var(--black);
   --scrollbar-bg: var(--purple);
-
-  /* --------------------------------------------- Font */
   --font: "Fira Code", monospace;
-
-  /* font sizes */
   --par: 0.9rem;
   --heading: 1.1rem;
-  --small: 0.7rem;
-}
+  --small: 0.7rem; }
+
+body {
+  font-family: var(--font); }
+
 .titlebar {
-  background-color: hsl(240, 7%, 7%);
   background-color: var(--black-dark-1);
-  border-bottom: 0.5px solid hsl(246, 28%, 48%);
-  border-bottom: var(--border)
+  border-bottom: var(--border); }
+  .titlebar .titlebar-text {
+    color: var(--white-dark-1); }
+  .titlebar .titlebar-button {
+    color: var(--white-dark-2); }
 
-}
-.titlebar.titlebar-text {
-    color: hsl(212, 61%, 86%);
-    color: var(--white-dark-1);
-  }
-.titlebar.titlebar-button {
-    color: hsl(212, 61%, 81%);
-    color: var(--white-dark-2);
-  }
 .side-dock-ribbon {
-  background-color: hsl(240, 7%, 7%);
-  background-color: var(--ribbon-background)
-  /* Ribbon buttons */
-}
-.side-dock-ribbon.side-dock-ribbon-action {
-    color: hsl(246, 28%, 48%);
-    color: var(--icon-normal)
-  }
-.side-dock-ribbon.side-dock-ribbon-action:hover,
-    .side-dock-ribbon.side-dock-ribbon-action:focus {
-      color: hsl(164, 68%, 72%);
-      color: var(--icon-hover);
-    }
-.side-dock-ribbon {
-  /* Arrow */
-}
-.side-dock-ribbon.workspace-ribbon-collapse-btn {
-    color: hsl(164, 68%, 72%);
-    color: var(--icon-accent);
-  }
-.side-dock-ribbon {
+  background-color: var(--ribbon-background); }
+  .side-dock-ribbon .side-dock-ribbon-action {
+    color: var(--icon-normal); }
+    .side-dock-ribbon .side-dock-ribbon-action:hover, .side-dock-ribbon .side-dock-ribbon-action:focus {
+      color: var(--icon-hover); }
+  .side-dock-ribbon .workspace-ribbon-collapse-btn {
+    color: var(--icon-accent); }
+  .side-dock-ribbon.is-collapsed {
+    border-right: var(--border); }
 
-  /* TODO: check if this is broken */
-}
-.side-dock-ribbon.is-collapsed {
-    border-right: 0.5px solid hsl(246, 28%, 48%);
-    border-right: var(--border);
-  }
 :root {
   --tab-background: var(--black-dark-1);
   --explorer-active-bg: var(--accent);
   --explorer-active: var(--black);
   --explorer-hover: var(--black-light-1);
   --search-bar: var(--black-light-1);
-  --search-hover: var(--black-dark-1);
-}
-/*  ---------------------------------------------------------------- LEFT SIDEBAR */
+  --search-hover: var(--black-dark-1); }
+
 .workspace-split.mod-left-split {
-  background-color: hsl(240, 7%, 12%);
-  background-color: var(--sidebar-background)
-
-  /* resize hr between left sidebar and editor */
-}
-.workspace-split.mod-left-split.workspace-leaf-resize-handle {
-    background-color: hsl(246, 28%, 38%);
+  background-color: var(--sidebar-background); }
+  .workspace-split.mod-left-split .workspace-leaf-resize-handle {
     background-color: var(--purple-dark-2);
-    width: 2px
-  }
-.workspace-split.mod-left-split.workspace-leaf-resize-handle:hover,
-    .workspace-split.mod-left-split.workspace-leaf-resize-handle:focus {
-      background-color: hsl(164, 68%, 72%);
-      background-color: var(--accent);
-    }
-.workspace-split.mod-left-split.workspace-tabs {
-    background-color: hsl(240, 7%, 12%);
-    background-color: var(--black)
-
-     /* Header section */
-  }
-.workspace-split.mod-left-split.workspace-tabs.workspace-tab-header-container {
-      background-color: hsl(240, 7%, 7%);
-      background-color: var(--tab-background)
-
-       /* currently selected tab */
-    }
-.workspace-split.mod-left-split.workspace-tabs.workspace-tab-header-container.workspace-tab-header.is-active {
-        color: hsl(164, 68%, 72%);
-        color: var(--icon-hover);
-      }
-.workspace-split.mod-left-split.workspace-tabs.workspace-tab-header-container.is-active {
-        background-color: hsl(240, 7%, 12%) !important;
-        background-color: var(--black) !important;
-      }
-.workspace-split.mod-left-split.workspace-tabs.workspace-tab-header-container {
-
-      /*  all tabs */
-    }
-.workspace-split.mod-left-split.workspace-tabs.workspace-tab-header-container.workspace-tab-header {
-        color: hsl(246, 28%, 48%);
+    width: 2px; }
+    .workspace-split.mod-left-split .workspace-leaf-resize-handle:hover, .workspace-split.mod-left-split .workspace-leaf-resize-handle:focus {
+      background-color: var(--accent); }
+  .workspace-split.mod-left-split .workspace-tabs {
+    background-color: var(--black); }
+    .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container {
+      background-color: var(--tab-background); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header.is-active {
+        color: var(--icon-hover); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-active {
+        background-color: var(--black) !important; }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header {
         color: var(--icon-normal);
-        background-color: hsl(240, 7%, 7%);
-        background-color: var(--tab-background)
-      }
-.workspace-split.mod-left-split.workspace-tabs.workspace-tab-header-container.workspace-tab-header:hover,
-        .workspace-split.mod-left-split.workspace-tabs.workspace-tab-header-container.workspace-tab-header:focus {
-          color: hsl(164, 68%, 72%);
+        background-color: var(--tab-background); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:hover, .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:focus {
+          color: var(--accent); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-before-active,
+      .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-after-active {
+        background-color: var(--tab-background); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-before-active .workspace-tab-header-inner,
+        .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-after-active .workspace-tab-header-inner {
+          background-color: var(--tab-background); }
+    .workspace-split.mod-left-split .workspace-tabs .workspace-leaf {
+      background-color: var(--sidebar-background); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button {
+        color: var(--icon-normal); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:hover, .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:focus {
+          color: var(--icon-hover); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-title:hover, .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-titlefocus {
+        background-color: var(--explorer-hover); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-title:hover .nav-folder-title-content, .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-titlefocus .nav-folder-title-content {
+          background-color: var(--explorer-hover);
+          color: var(--accent); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-title .nav-folder-title-content {
+        color: var(--text-mute);
+        font-weight: bold; }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file,
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file-title {
+        color: var(--text-mute);
+        font-style: italic; }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file:hover, .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file:focus,
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file-title:hover,
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file-title:focus {
           color: var(--accent);
-        }
-.workspace-split.mod-left-split.workspace-tabs.workspace-tab-header-container.is-before-active,
-      .workspace-split.mod-left-split.workspace-tabs.workspace-tab-header-container.is-after-active {
-        background-color: hsl(240, 7%, 7%);
-        background-color: var(--tab-background)
-      }
-.workspace-split.mod-left-split.workspace-tabs.workspace-tab-header-container.is-before-active.workspace-tab-header-inner, .workspace-split.mod-left-split.workspace-tabs.workspace-tab-header-container.is-after-active.workspace-tab-header-inner {
-          background-color: hsl(240, 7%, 7%);
-          background-color: var(--tab-background);
-        }
-.workspace-split.mod-left-split.workspace-tabs {
+          background-color: var(--explorer-hover); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active {
+        background-color: var(--explorer-active-bg); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active > div {
+          color: var(--explorer-active); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active:hover, .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active:focus {
+          background-color: var(--explorer-active-bg); }
+          .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active:hover > div, .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active:focus > div {
+            color: var(--explorer-active); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .nav-action-button {
+        color: var(--icon-normal); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .nav-action-button.is-active {
+          color: var(--icon-hover);
+          background-color: var(--sidebar-background);
+          border: 1px solid var(--icon-hover); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .nav-action-button:hover {
+          color: var(--icon-hover); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-input-container input {
+        background-color: var(--search-bar);
+        color: var(--text-mute); }
+      .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container {
+        background-color: var(--sidebar-background); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .tree-item-inner {
+          color: var(--text-mute); }
+        .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .search-result-file-match {
+          color: var(--text-mute); }
+          .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .search-result-file-match:hover {
+            background-color: var(--search-hover); }
+          .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .search-result-file-match .search-result-file-matched-text {
+            background-color: var(--accent);
+            color: var(--black); }
 
-    /* Main sidebar (on top of workspace-tabs) */
-  }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf {
-      background-color: hsl(240, 7%, 12%);
-      background-color: var(--sidebar-background)
+.workspace-drawer .workspace-drawer-inner {
+  background: var(--sidebar-background) !important; }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-header {
+    color: var(--purple-light-2); }
+    .workspace-drawer .workspace-drawer-inner .workspace-drawer-header .workspace-drawer-header-info {
+      color: var(--white); }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-tab-options .workspace-drawer-tab-option-item-icon {
+    color: var(--purple); }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-tab-options .workspace-drawer-tab-option-item-title {
+    color: var(--white); }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-active-tab-container .workspace-drawer-active-tab-header .workspace-drawer-active-tab-back-icon {
+    color: var(--accent); }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-active-tab-container .workspace-drawer-active-tab-header .workspace-drawer-active-tab-icon {
+    color: var(--purple); }
+  .workspace-drawer .workspace-drawer-inner .workspace-drawer-active-tab-container .workspace-drawer-active-tab-header .workspace-drawer-active-tab-title {
+    color: var(--white); }
+  .workspace-drawer .workspace-drawer-inner .pin {
+    color: var(--text-mute); }
+  .workspace-drawer .workspace-drawer-inner .nav-buttons-container .nav-action-button {
+    color: var(--purple); }
+  .workspace-drawer .workspace-drawer-inner .nav-folder-title {
+    color: var(--text-mute);
+    font-weight: bold; }
+  .workspace-drawer .workspace-drawer-inner .nav-file-title {
+    color: var(--text-mute);
+    font-style: italic; }
+    .workspace-drawer .workspace-drawer-inner .nav-file-title.is-active {
+      background: var(--explorer-active-bg);
+      color: var(--explorer-active); }
 
-      /*  New file/folder .e.c.t */
-    }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-header.nav-action-button {
-          color: hsl(246, 28%, 48%);
-          color: var(--icon-normal)
-        }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-header.nav-action-button:hover,
-          .workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-header.nav-action-button:focus {
-            color: hsl(164, 68%, 72%);
-            color: var(--icon-hover);
-          }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf {
-
-      /*  File explorer */
-    }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container {
-        /*  folders and main title */
-      }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-folder-title:hover,
-          .workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-folder-title:focus {
-            background-color: hsl(240, 7%, 17%);
-            background-color: var(--explorer-hover)
-          }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-folder-title:hover.nav-folder-title-content, .workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-folder-title:focus.nav-folder-title-content {
-              background-color: hsl(240, 7%, 17%);
-              background-color: var(--explorer-hover);
-              color: hsl(164, 68%, 72%);
-              color: var(--accent);
-            }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-folder-title.nav-folder-title-content {
-            color: hsl(211, 19%, 60%);
-            color: var(--text-mute);
-            font-weight: bold;
-          }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container {
-
-        /*  file names */
-      }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.nav-file,
-          .workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.nav-file-title {
-            color: hsl(211, 19%, 60%);
-            color: var(--text-mute);
-            font-style: italic
-          }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.nav-file:hover,
-            .workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.nav-file:focus,
-            .workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.nav-file-title:hover,
-            .workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.nav-file-title:focus {
-              color: hsl(164, 68%, 72%);
-              color: var(--accent);
-              background-color: hsl(240, 7%, 17%);
-              background-color: var(--explorer-hover);
-            }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.is-active {
-            background-color: hsl(164, 68%, 72%);
-            background-color: var(--explorer-active-bg)
-          }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.is-active > div {
-              color: hsl(240, 7%, 12%);
-              color: var(--explorer-active)
-          }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.is-active:hover,
-            .workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.is-active:focus {
-              background-color: hsl(164, 68%, 72%);
-              background-color: var(--explorer-active-bg)
-            }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.is-active:hover > div,
-            .workspace-split.mod-left-split.workspace-tabs.workspace-leaf.nav-files-container.nav-file.is-active:focus > div {
-                color: hsl(240, 7%, 12%);
-                color: var(--explorer-active)
-            }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf {
-
-      /*  Search tab */
-    }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"] {
-        /*  buttons */
-      }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].nav-action-button {
-          color: hsl(246, 28%, 48%);
-          color: var(--icon-normal)
-        }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].nav-action-button.is-active {
-            color: hsl(164, 68%, 72%);
-            color: var(--icon-hover);
-            background-color: hsl(240, 7%, 12%);
-            background-color: var(--sidebar-background);
-            border: 1px solid hsl(164, 68%, 72%);
-            border: 1px solid var(--icon-hover);
-          }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].nav-action-button:hover {
-            color: hsl(164, 68%, 72%);
-            color: var(--icon-hover);
-          }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"] {
-        /*  search bar */
-      }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].search-input-container input {
-          background-color: hsl(240, 7%, 17%);
-          background-color: var(--search-bar);
-          color: hsl(211, 19%, 60%);
-          color: var(--text-mute);
-        }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"] {
-        /*  search results list */
-      }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].search-result-container {
-          background-color: hsl(240, 7%, 12%);
-          background-color: var(--sidebar-background)
-
-          /*  search result item */
-        }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].search-result-container.search-result {
-            /*  search result title */
-          }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].search-result-container.search-result.tree-item-inner {
-              color: hsl(211, 19%, 60%);
-              color: var(--text-mute);
-            }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].search-result-container.search-result {
-            /*  search result body */
-          }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].search-result-container.search-result.search-result-file-match {
-              color: hsl(211, 19%, 60%);
-              color: var(--text-mute)
-            }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].search-result-container.search-result.search-result-file-match:hover {
-                background-color: hsl(240, 7%, 7%);
-                background-color: var(--search-hover);
-              }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].search-result-container.search-result.search-result-file-match {
-
-              /*  Search highlight */
-            }
-.workspace-split.mod-left-split.workspace-tabs.workspace-leaf.workspace-leaf-content[data-type="search"].search-result-container.search-result.search-result-file-match.search-result-file-matched-text {
-                background-color: hsl(164, 68%, 72%);
-                background-color: var(--accent);
-                color: hsl(240, 7%, 12%);
-                color: var(--black);
-              }
-/*  Mobile */
-.workspace-drawer.workspace-drawer-inner {
-    /*  Global drawer styles */
-    background: hsl(240, 7%, 12%) !important;
-    background: var(--sidebar-background) !important
-  }
-.workspace-drawer.workspace-drawer-inner.workspace-drawer-header {
-      color: hsl(246, 28%, 58%);
-      color: var(--purple-light-2)
-    }
-.workspace-drawer.workspace-drawer-inner.workspace-drawer-header.workspace-drawer-header-info {
-        color: hsl(212, 61%, 91%);
-        color: var(--white);
-      }
-.workspace-drawer.workspace-drawer-inner.workspace-drawer-tab-options {
-      .workspace-drawer-tab-option-item-icon {
-        color: hsl(246, 28%, 48%);
-        color: var(--purple);
-      }
-    }
-.workspace-drawer.workspace-drawer-inner.workspace-drawer-tab-options.workspace-drawer-tab-option-item-title {
-        color: hsl(212, 61%, 91%);
-        color: var(--white);
-      }
-.workspace-drawer.workspace-drawer-inner.workspace-drawer-active-tab-container.workspace-drawer-active-tab-header.workspace-drawer-active-tab-back-icon {
-          color: hsl(164, 68%, 72%);
-          color: var(--accent);
-        }
-.workspace-drawer.workspace-drawer-inner.workspace-drawer-active-tab-container.workspace-drawer-active-tab-header.workspace-drawer-active-tab-icon {
-          color: hsl(246, 28%, 48%);
-          color: var(--purple);
-        }
-.workspace-drawer.workspace-drawer-inner.workspace-drawer-active-tab-container.workspace-drawer-active-tab-header.workspace-drawer-active-tab-title {
-          color: hsl(212, 61%, 91%);
-          color: var(--white);
-        }
-.workspace-drawer.workspace-drawer-inner.pin {
-      color: hsl(211, 19%, 60%);
-      color: var(--text-mute);
-    }
-.workspace-drawer.workspace-drawer-inner {
-
-    /*  Nav */
-  }
-.workspace-drawer.workspace-drawer-inner.nav-buttons-container.nav-action-button {
-        color: hsl(246, 28%, 48%);
-        color: var(--purple);
-      }
-.workspace-drawer.workspace-drawer-inner.nav-folder-title {
-      color: hsl(211, 19%, 60%);
-      color: var(--text-mute);
-      font-weight: bold;
-    }
-.workspace-drawer.workspace-drawer-inner.nav-file-title {
-      color: hsl(211, 19%, 60%);
-      color: var(--text-mute);
-      font-style: italic
-
-      /* TODO: check if this works */
-    }
-.workspace-drawer.workspace-drawer-inner.nav-file-title .is-active {
-        background: hsl(164, 68%, 72%);
-        background: var(--explorer-active-bg);
-        color: hsl(240, 7%, 12%);
-        color: var(--explorer-active)
-    }
 :root {
   --editor-icons: var(--white-dark-3);
   --editor-title: var(--white);
   --line-number: var(--purple-dark-3);
-  --current-line-bg: var(--black);
-}
-.mod-root {
-   /* Workspace leaf is each editor: mod-active class is applied to the active editor */
-}
-.mod-root.workspace-leaf {
-     /* Workspace leaf content has a data attribute for empty if there is no file */
-  }
-.mod-root.workspace-leaf.workspace-leaf-content {
-       /* ----------------------------------- Editor header */
-    }
-.mod-root.workspace-leaf.workspace-leaf-content.view-header {
-         /* Important used to avoid crazy nesting */
-        background-color: hsl(240, 7%, 7%) !important;
-        background-color: var(--editor-background) !important;
-        border-top: none;
-        border-bottom: 0.5px solid hsl(246, 28%, 48%) !important;
-        border-bottom: var(--border) !important
-      }
-.mod-root.workspace-leaf.workspace-leaf-content.view-header.view-header-title-container::after {
-          background: hsl(240, 7%, 7%) !important;
-          background: var(--editor-background) !important;
-        }
-.mod-root.workspace-leaf.workspace-leaf-content.view-header {
+  --current-line-bg: var(--black); }
 
-         /* File icon */
-      }
-.mod-root.workspace-leaf.workspace-leaf-content.view-header.view-header-icon {
-          color: hsl(211, 19%, 60%);
-          color: var(--editor-icons)
-        }
-.mod-root.workspace-leaf.workspace-leaf-content.view-header.view-header-icon:hover {
-            color: hsl(164, 68%, 72%);
-            color: var(--icon-hover);
-          }
-.mod-root.workspace-leaf.workspace-leaf-content.view-header.view-header-title {
-          color: hsl(212, 61%, 91%);
-          color: var(--editor-title);
-        }
-.mod-root.workspace-leaf.workspace-leaf-content.view-header {
+.mod-root .workspace-leaf .workspace-leaf-content .view-header {
+  background-color: var(--editor-background) !important;
+  border-top: none;
+  border-bottom: var(--border) !important; }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-header .view-header-title-container::after {
+    background: var(--editor-background) !important; }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-header .view-header-icon {
+    color: var(--editor-icons); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-header .view-header-icon:hover {
+      color: var(--icon-hover); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-header .view-header-title {
+    color: var(--editor-title); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-header .view-action {
+    color: var(--editor-icons); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-header .view-action:hover {
+      color: var(--icon-hover); }
 
-         /* Action icons */
-      }
-.mod-root.workspace-leaf.workspace-leaf-content.view-header.view-action {
-          color: hsl(211, 19%, 60%);
-          color: var(--editor-icons)
-        }
-.mod-root.workspace-leaf.workspace-leaf-content.view-header.view-action:hover {
-            color: hsl(164, 68%, 72%);
-            color: var(--icon-hover);
-          }
-.mod-root.workspace-leaf.workspace-leaf-content {
+.mod-root .workspace-leaf .workspace-leaf-content .view-content {
+  background-color: var(--editor-background); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-content .empty-state-container {
+    color: var(--text-mute); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .empty-state-container .empty-state-action {
+      color: var(--text-mute); }
+      .mod-root .workspace-leaf .workspace-leaf-content .view-content .empty-state-container .empty-state-action:hover {
+        color: var(--icon-hover); }
+  .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view {
+    font-size: var(--par); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-cursor {
+      border-left: 1px solid var(--accent); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror {
+      max-width: 70vw; }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-fat-cursor .CodeMirror-cursor {
+      background: var(--accent); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-gutters .CodeMirror-gutter {
+      background-color: var(--editor-background); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-linenumber {
+      color: var(--line-number);
+      font-size: var(--par); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-gutters {
+      background-color: var(--editor-background) !important; }
+      .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-gutters .cm-foldGutter {
+        background: var(--editor-background); }
+        .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-gutters .cm-foldGutter span[title="Unfold line"] {
+          color: var(--purple); }
+      .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-gutters .cm-lineNumbers {
+        background: var(--editor-background); }
+        .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-gutters .cm-lineNumbers .cm-gutterElement {
+          color: var(--line-number); }
+    .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-activeline {
+      background-color: var(--current-line-bg); }
+      .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-activeline .CodeMirror-linenumber {
+        color: var(--accent); }
 
-       /* ------------------------------------ Content */
-    }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content {
-        background-color: hsl(240, 7%, 7%);
-        background-color: var(--editor-background)
-
-         /* Empty window content */
-      }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.empty-state-container {
-          color: hsl(211, 19%, 60%);
-          color: var(--text-mute)
-        }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.empty-state-container.empty-state-action {
-            color: hsl(211, 19%, 60%);
-            color: var(--text-mute)
-          }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.empty-state-container.empty-state-action:hover {
-              color: hsl(164, 68%, 72%);
-              color: var(--icon-hover);
-            }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content {
-
-         /* -------------------------------- Editor styles */
-      }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view {
-          font-size: 0.9rem;
-          font-size: var(--par)
-           /* Cursor insert mode */
-        }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view.CodeMirror-cursor {
-            border-left: 1px solid hsl(164, 68%, 72%);
-            border-left: 1px solid var(--accent);
-          }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view.CodeMirror {
-            max-width: 70vw;
-          }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view {
-
-           /* Cursor normal */
-        }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view.cm-fat-cursor .CodeMirror-cursor {
-            background: hsl(164, 68%, 72%);
-            background: var(--accent);
-          }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view {
-
-           /* Gutters Desktop */
-        }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view.CodeMirror-gutters .CodeMirror-gutter {
-            background-color: hsl(240, 7%, 7%);
-            background-color: var(--editor-background);
-          }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view.CodeMirror-linenumber {
-            color: hsl(246, 28%, 33%);
-            color: var(--line-number);
-            font-size: 0.9rem;
-            font-size: var(--par);
-          }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view {
-
-           /* Gutters Mobile */
-        }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view.cm-gutters {
-            background-color: hsl(240, 7%, 7%) !important;
-            background-color: var(--editor-background) !important
-          }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view.cm-gutters.cm-foldGutter {
-              background: hsl(240, 7%, 7%);
-              background: var(--editor-background);
-              span[title="Unfold line"] {
-                /* color: var(--purple);  doesn't work */
-              }
-            }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view.cm-gutters.cm-lineNumbers {
-              background: hsl(240, 7%, 7%);
-              background: var(--editor-background)
-            }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view.cm-gutters.cm-lineNumbers.cm-gutterElement {
-                color: hsl(246, 28%, 33%);
-                color: var(--line-number);
-              }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view {
-
-            /* Content styles */
-           /* See _text-styles.scss */
-
-           /* ------ Active line styles */
-        }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view.CodeMirror-activeline {
-            background-color: hsl(240, 7%, 12%);
-            background-color: var(--current-line-bg)
-          }
-.mod-root.workspace-leaf.workspace-leaf-content.view-content.markdown-source-view.CodeMirror-activeline.CodeMirror-linenumber {
-              color: hsl(164, 68%, 72%);
-              color: var(--accent);
-            }
-/* 
+/**
   CodeMirror-line is the base line class
   Each element type class has the form .HyperMD-[element type]
     Nested in each element is a class .cm-formatting which styles the formatting markup
- */
+*/
 :root {
   --heading-color: var(--purple);
   --formatting: var(--accent);
-  --list: var(--purple);
-}
-/* ------------- BASE LINE STYLING */
-.CodeMirror-line span, .cm-line span {
-    color: hsl(212, 61%, 91%);
-    color: var(--text);
-  }
-.CodeMirror-line,
-.cm-line {
+  --list: var(--purple); }
 
-   /* ---- HEADINGS */
-}
-.CodeMirror-line.HyperMD-header.cm-header, .cm-line.HyperMD-header.cm-header {
-      font-size: 1.1rem !important;
-      font-size: var(--heading) !important;
-      color: hsl(246, 28%, 48%);
-      color: var(--purple);
-    }
-.CodeMirror-line.HyperMD-header.cm-formatting, .cm-line.HyperMD-header.cm-formatting {
-      color: hsl(164, 68%, 72%);
-      color: var(--accent);
-    }
-.CodeMirror-line,
-.cm-line {
+.CodeMirror-line span,
+.cm-line span {
+  color: var(--text); }
 
-   /* ---- LIST */
-}
-.CodeMirror-line.HyperMD-list-line.cm-formatting, .cm-line.HyperMD-list-line.cm-formatting {
-      color: hsl(246, 28%, 48%);
-      color: var(--purple);
-    }
-.CodeMirror-line,
-.cm-line {
+.CodeMirror-line.HyperMD-header .cm-header,
+.cm-line.HyperMD-header .cm-header {
+  font-size: var(--heading) !important;
+  color: var(--purple); }
 
-   /* BOLD AND ITALICS */
-}
-.CodeMirror-line.cm-em,
-  .CodeMirror-line.cm-strong,
-  .cm-line.cm-em,
-  .cm-line.cm-strong {
-    color: hsl(246, 28%, 58%);
-    color: var(--purple-light-2)
-  }
-.CodeMirror-line.cm-em.cm-formatting, .CodeMirror-line.cm-strong.cm-formatting, .cm-line.cm-em.cm-formatting, .cm-line.cm-strong.cm-formatting {
-      color: hsl(164, 68%, 72%);
-      color: var(--accent);
-    }
-.CodeMirror-line,
-.cm-line {
+.CodeMirror-line.HyperMD-header .cm-formatting,
+.cm-line.HyperMD-header .cm-formatting {
+  color: var(--accent); }
 
-   /* HIGHLIGHT */
-}
-.CodeMirror-line.cm-formatting.cm-highlight, .cm-line.cm-formatting.cm-highlight {
-    background-color: hsl(164, 68%, 72%);
-    background-color: var(--accent);
-    color: hsl(240, 7%, 7%);
-    color: var(--black-dark-1);
-  }
-.CodeMirror-line.cm-formatting + .cm-highlight, .cm-line.cm-formatting + .cm-highlight {
-    background-color: hsl(164, 68%, 72%);
-    background-color: var(--accent);
-    color: hsl(240, 7%, 7%);
-    color: var(--black-dark-1);
-  }
-.CodeMirror-line,
-.cm-line {
+.CodeMirror-line.HyperMD-list-line .cm-formatting,
+.cm-line.HyperMD-list-line .cm-formatting {
+  color: var(--purple); }
 
-   /* ---- QUOTE */
-   /* TODO: Check this */
-}
-.CodeMirror-line .HyperMD-quote,
-.cm-line .HyperMD-quote {
-    .cm-formatting {
-      color: hsl(164, 68%, 72%);
-      color: var(--accent);
-    }
-}
-.CodeMirror-line,
-.cm-line {
+.CodeMirror-line .cm-em,
+.CodeMirror-line .cm-strong,
+.cm-line .cm-em,
+.cm-line .cm-strong {
+  color: var(--purple-light-2); }
+  .CodeMirror-line .cm-em.cm-formatting,
+  .CodeMirror-line .cm-strong.cm-formatting,
+  .cm-line .cm-em.cm-formatting,
+  .cm-line .cm-strong.cm-formatting {
+    color: var(--accent); }
 
-   /* ---- CODE BLOCK */
-}
-.CodeMirror-line.HyperMD-codeblock, .cm-line.HyperMD-codeblock {
-    background-color: hsl(240, 7%, 12%);
-    background-color: var(--black);
-    color: hsl(212, 61%, 91%);
-    color: var(--white)
-    /* TODO: Check this */
-  }
-.CodeMirror-line.HyperMD-codeblock .HyperMD-codeblock-begin, .cm-line.HyperMD-codeblock .HyperMD-codeblock-begin {
-      color: hsl(164, 68%, 72%);
-      color: var(--accent)
-  }
-.CodeMirror-line.HyperMD-codeblock .HyperMD-codeblock-end, .cm-line.HyperMD-codeblock .HyperMD-codeblock-end {
-      color: hsl(164, 68%, 72%);
-      color: var(--accent)
-  }
-.CodeMirror-line,
-.cm-line {
+.CodeMirror-line .cm-formatting.cm-highlight,
+.cm-line .cm-formatting.cm-highlight {
+  background-color: var(--accent);
+  color: var(--black-dark-1); }
 
-   /* ---- HR */
-   /* TODO: Check this */
-}
-.CodeMirror-line .HyperMD-hr,
-.cm-line .HyperMD-hr {
-    .cm-hr {
-      color: hsl(164, 68%, 72%);
-      color: var(--accent);
-    }
-}
-.CodeMirror-line,
-.cm-line {
+.CodeMirror-line .cm-formatting + .cm-highlight,
+.cm-line .cm-formatting + .cm-highlight {
+  background-color: var(--accent);
+  color: var(--black-dark-1); }
 
-   /* ---- LINKS */
-}
-.CodeMirror-line span.cm-formatting-link, .cm-line span.cm-formatting-link {
-    color: hsl(246, 28%, 48%);
-    color: var(--purple);
-  }
-.CodeMirror-line,
-.cm-line {
+.CodeMirror-line.HyperMD-quote .cm-formatting,
+.cm-line.HyperMD-quote .cm-formatting {
+  color: var(--accent); }
 
-  /* TODO: Here */
-}
-.CodeMirror-line.cm-formatting-link + .cm-hmd-internal-link, .cm-line.cm-formatting-link + .cm-hmd-internal-link {
-    color: hsl(164, 68%, 72%);
-    color: var(--accent);
-  }
-.CodeMirror-line,
-.cm-line {
+.CodeMirror-line.HyperMD-codeblock,
+.cm-line.HyperMD-codeblock {
+  background-color: var(--black-light-1);
+  color: var(--white); }
+  .CodeMirror-line.HyperMD-codeblock.HyperMD-codeblock-begin, .CodeMirror-line.HyperMD-codeblock.HyperMD-codeblock-end,
+  .cm-line.HyperMD-codeblock.HyperMD-codeblock-begin,
+  .cm-line.HyperMD-codeblock.HyperMD-codeblock-end {
+    color: var(--accent); }
 
-   /* ---- FRONTMATTER */
-}
-.CodeMirror-line.cm-hmd-frontmatter, .cm-line.cm-hmd-frontmatter {
-    font-size: 0.7rem;
-    font-size: var(--small);
-    color: hsl(211, 19%, 60%);
-    color: var(--text-mute);
-  }
+.CodeMirror-line.HyperMD-hr .cm-hr,
+.cm-line.HyperMD-hr .cm-hr {
+  color: var(--accent); }
+
+.CodeMirror-line span.cm-formatting-link,
+.cm-line span.cm-formatting-link {
+  color: var(--purple); }
+
+.CodeMirror-line .cm-formatting-link + .cm-hmd-internal-link,
+.cm-line .cm-formatting-link + .cm-hmd-internal-link {
+  color: var(--accent); }
+
+.CodeMirror-line .cm-hmd-frontmatter,
+.cm-line .cm-hmd-frontmatter {
+  font-size: var(--small);
+  color: var(--text-mute); }
+
 .markdown-preview-view {
-  font-size: 0.9rem;
-  font-size: var(--par);
-
-  & h1,
-  h5 {
-    color: hsl(164, 68%, 72%);
-    color: var(--accent);
-  }
-}
-.markdown-preview-view h3 {
-    color: hsl(246, 28%, 63%);
+  font-size: var(--par); }
+  .markdown-preview-view h1,
+  .markdown-preview-view h5 {
+    color: var(--accent); }
+  .markdown-preview-view h3 {
     color: var(--purple-light-3);
-    font-weight: normal;
-  }
-.markdown-preview-view h4 {
-    color: hsl(246, 28%, 48%);
+    font-weight: normal; }
+  .markdown-preview-view h4 {
     color: var(--purple);
     font-weight: normal;
-    font-style: italic;
-  }
-.markdown-preview-view {
-
-  & h2,
-  h6 {
-    color: hsl(246, 28%, 48%);
+    font-style: italic; }
+  .markdown-preview-view h2,
+  .markdown-preview-view h6 {
     color: var(--purple);
-    font-style: italic;
-  }
-}
-.markdown-preview-view h2 {
-    border-bottom: 1px solid hsl(164, 68%, 72%);
-    border-bottom: 1px solid var(--accent);
-  }
-.markdown-preview-view {
-
- & p,
-  span,
-  ul,
-  ol {
-    color: hsl(212, 61%, 91%);
-    color: var(--text);
-  }
-}
-.markdown-preview-view mark {
-    background-color: hsl(164, 68%, 72%);
+    font-style: italic; }
+  .markdown-preview-view h2 {
+    border-bottom: 1px solid var(--accent); }
+  .markdown-preview-view p,
+  .markdown-preview-view span,
+  .markdown-preview-view ul,
+  .markdown-preview-view ol {
+    color: var(--text); }
+  .markdown-preview-view mark {
     background-color: var(--accent);
-    color: hsl(240, 7%, 7%);
-    color: var(--black-dark-1);
-  }
-.markdown-preview-view a {
-    color: hsl(246, 28%, 63%);
-    color: var(--purple-light-3);
-  }
-.markdown-preview-view blockquote {
-    border: solid 1px hsl(246, 28%, 48%);
+    color: var(--black-dark-1); }
+  .markdown-preview-view a {
+    color: var(--purple-light-3); }
+  .markdown-preview-view blockquote {
     border: solid 1px var(--purple);
     border-left-width: 5px;
-    color: hsl(212, 61%, 91%);
-    color: var(--text);
-  }
-.markdown-preview-view table th {
-    color: hsl(164, 68%, 72%);
-    color: var(--accent);
-  }
-.markdown-preview-view hr {
-    border-color: hsl(246, 28%, 33%);
-    border-color: var(--purple-dark-3);
-  }
-.markdown-preview-view {
+    color: var(--text); }
+  .markdown-preview-view table th {
+    color: var(--accent); }
+  .markdown-preview-view hr {
+    border-color: var(--purple-dark-3); }
+  .markdown-preview-view .markdown-preview-section {
+    max-width: 1000px !important; }
 
-   /* Display container */
-}
-.markdown-preview-view .markdown-preview-section {
-    max-width: 1000px !important;
-  }
-/* ---------------------------------------------------------------- LEFT SIDEBAR */
 .workspace-split.mod-right-split {
-  background-color: hsl(240, 7%, 12%);
-  background-color: var(--sidebar-background)
-
-   /* resize hr between left sidebar and editor */
-}
-.workspace-split.mod-right-split.workspace-leaf-resize-handle {
-    background-color: hsl(246, 28%, 38%);
+  background-color: var(--sidebar-background); }
+  .workspace-split.mod-right-split .workspace-leaf-resize-handle {
     background-color: var(--purple-dark-2);
-    width: 2px
-  }
-.workspace-split.mod-right-split.workspace-leaf-resize-handle:hover,
-    .workspace-split.mod-right-split.workspace-leaf-resize-handle:focus {
-      background-color: hsl(164, 68%, 72%);
-      background-color: var(--accent);
-    }
-.workspace-split.mod-right-split.workspace-tabs {
-    background-color: hsl(240, 7%, 12%);
-    background-color: var(--black)
-
-     /* Header section */
-  }
-.workspace-split.mod-right-split.workspace-tabs.workspace-tab-header-container {
-      background-color: hsl(240, 7%, 7%);
-      background-color: var(--tab-background)
-
-       /* currently selected tab */
-    }
-.workspace-split.mod-right-split.workspace-tabs.workspace-tab-header-container.workspace-tab-header.is-active {
-        color: hsl(164, 68%, 72%);
-        color: var(--icon-hover);
-      }
-.workspace-split.mod-right-split.workspace-tabs.workspace-tab-header-container.is-active {
-        background-color: hsl(240, 7%, 12%) !important;
-        background-color: var(--black) !important;
-      }
-.workspace-split.mod-right-split.workspace-tabs.workspace-tab-header-container {
-
-       /* all tabs */
-    }
-.workspace-split.mod-right-split.workspace-tabs.workspace-tab-header-container.workspace-tab-header {
-        color: hsl(246, 28%, 48%);
+    width: 2px; }
+    .workspace-split.mod-right-split .workspace-leaf-resize-handle:hover, .workspace-split.mod-right-split .workspace-leaf-resize-handle:focus {
+      background-color: var(--accent); }
+  .workspace-split.mod-right-split .workspace-tabs {
+    background-color: var(--black); }
+    .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container {
+      background-color: var(--tab-background); }
+      .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header.is-active {
+        color: var(--icon-hover); }
+      .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .is-active {
+        background-color: var(--black) !important; }
+      .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header {
         color: var(--icon-normal);
-        background-color: hsl(240, 7%, 7%);
-        background-color: var(--tab-background)
-      }
-.workspace-split.mod-right-split.workspace-tabs.workspace-tab-header-container.workspace-tab-header:hover,
-        .workspace-split.mod-right-split.workspace-tabs.workspace-tab-header-container.workspace-tab-header:focus {
-          color: hsl(164, 68%, 72%);
-          color: var(--accent);
-        }
-.workspace-split.mod-right-split.workspace-tabs.workspace-tab-header-container {
-      /* TODO: check this */
-      &.is-before-active,
-      .is-after-active {
-        background-color: hsl(240, 7%, 7%);
-        background-color: var(--tab-background)
-      }
-        &.is-before-active.workspace-tab-header-inner, .is-after-active.workspace-tab-header-inner {
-          background-color: hsl(240, 7%, 7%);
-          background-color: var(--tab-background);
-        }
-    }
-.workspace-split.mod-right-split.workspace-tabs {
-
-     /* Main sidebar (on top of workspace-tabs) */
-  }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf {
-      background-color: hsl(240, 7%, 12%);
-      background-color: var(--sidebar-background)
-
-       /* Icons */
-    }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.nav-header.nav-action-button {
-          color: hsl(246, 28%, 48%);
-          color: var(--icon-normal)
-        }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.nav-header.nav-action-button svg {
-            fill: hsl(246, 28%, 48%);
-            fill: var(--icon-normal)
-          }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.nav-header.nav-action-button svg path {
-              stroke: hsl(246, 28%, 48%);
-              stroke: var(--icon-normal);
-            }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.nav-header.nav-action-button:hover svg {
-              fill: hsl(164, 68%, 72%);
-              fill: var(--icon-hover)
-            }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.nav-header.nav-action-button:hover svg path {
-                stroke: hsl(164, 68%, 72%);
-                stroke: var(--icon-hover);
-              }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.nav-header.nav-action-button:hover,
-          .workspace-split.mod-right-split.workspace-tabs.workspace-leaf.nav-header.nav-action-button:focus {
-            color: hsl(164, 68%, 72%);
-            color: var(--icon-hover);
-          }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf {
-
-       /* Lists */
-    }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.tree-item span {
-          color: hsl(211, 19%, 60%);
-          color: var(--text-mute);
-        }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.tree-item.tree-item-flair {
-          color: hsl(246, 28%, 63%);
-          color: var(--purple-light-3);
-          background-color: hsl(240, 7%, 7%);
+        background-color: var(--tab-background); }
+        .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:hover, .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:focus {
+          color: var(--accent); }
+      .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .is-before-active,
+      .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .is-after-active {
+        background-color: var(--tab-background); }
+        .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .is-before-active .workspace-tab-header-inner,
+        .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .is-after-active .workspace-tab-header-inner {
+          background-color: var(--tab-background); }
+    .workspace-split.mod-right-split .workspace-tabs .workspace-leaf {
+      background-color: var(--sidebar-background); }
+      .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button {
+        color: var(--icon-normal); }
+        .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button svg {
+          fill: var(--icon-normal); }
+          .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button svg path {
+            stroke: var(--icon-normal); }
+        .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:hover svg {
+          fill: var(--icon-hover); }
+          .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:hover svg path {
+            stroke: var(--icon-hover); }
+        .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:hover, .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:focus {
+          color: var(--icon-hover); }
+      .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item span {
+        color: var(--text-mute); }
+      .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item .tree-item-flair {
+        color: var(--purple-light-3);
+        background-color: var(--black-dark-1); }
+      .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item:hover .tree-item-self {
+        background-color: var(--black-light-1); }
+        .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item:hover .tree-item-self span {
+          color: var(--accent); }
+      .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item-self {
+        color: var(--text-mute); }
+        .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item-self .tree-item-flair {
           background-color: var(--black-dark-1);
-        }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.tree-item:hover.tree-item-self {
-            background-color: hsl(240, 7%, 17%);
-            background-color: var(--black-light-1)
-          }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.tree-item:hover.tree-item-self span {
-              color: hsl(164, 68%, 72%);
-              color: var(--accent);
-            }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.tree-item-self {
-        color: hsl(211, 19%, 60%);
-        color: var(--text-mute)
-      }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.tree-item-self.tree-item-flair {
-          background-color: hsl(240, 7%, 7%);
-          background-color: var(--black-dark-1);
-          color: hsl(246, 28%, 63%);
-          color: var(--purple-light-3);
-        }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.tree-item-self:hover {
-          background-color: hsl(240, 7%, 17%);
+          color: var(--purple-light-3); }
+        .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item-self:hover {
           background-color: var(--black-light-1);
-          color: hsl(164, 68%, 72%);
-          color: var(--accent)
-        }
-.workspace-split.mod-right-split.workspace-tabs.workspace-leaf.tree-item-self:hover.tree-item-flair {
-            background-color: hsl(240, 7%, 7%);
+          color: var(--accent); }
+          .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item-self:hover .tree-item-flair {
             background-color: var(--black-dark-1);
-            color: hsl(164, 68%, 72%);
-            color: var(--accent);
-          }
-.status-bar {
-  border-top: 0.5px solid hsl(246, 28%, 48%);
-  border-top: var(--border);
-  background-color: hsl(240, 7%, 7%);
-  background-color: var(--editor-background)
-}
-.status-bar.status-bar-item {
-    color: hsl(211, 19%, 60%);
-    color: var(--text-mute)
-  }
-.status-bar.status-bar-item > .mod-clickable:hover {
-      color: hsl(164, 68%, 72%);
-      color: var(--accent)
-  }
-body {
-  font-family: "Fira Code", monospace;
-  font-family: var(--font);
-}
+            color: var(--accent); }
 
+.status-bar {
+  border-top: var(--border);
+  background-color: var(--editor-background); }
+  .status-bar .status-bar-item {
+    color: var(--text-mute); }
+    .status-bar .status-bar-item.mod-clickable:hover {
+      color: var(--accent); }

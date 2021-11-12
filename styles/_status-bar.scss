@@ -2,10 +2,10 @@
   border-top: var(--border);
   background-color: var(--editor-background);
 
-  &.status-bar-item {
+  .status-bar-item {
     color: var(--text-mute);
 
-    @nest & > .mod-clickable:hover {
+    &.mod-clickable:hover {
       color: var(--accent);
     }
   }

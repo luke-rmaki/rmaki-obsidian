@@ -1,7 +1,7 @@
 .side-dock-ribbon {
   background-color: var(--ribbon-background);
-  /* Ribbon buttons */
-  &.side-dock-ribbon-action {
+  // Ribbon buttons
+  .side-dock-ribbon-action {
     color: var(--icon-normal);
 
     &:hover,
@@ -9,12 +9,11 @@
       color: var(--icon-hover);
     }
   }
-  /* Arrow */
-  &.workspace-ribbon-collapse-btn {
+  // Arrow
+  .workspace-ribbon-collapse-btn {
     color: var(--icon-accent);
   }
 
-  /* TODO: check if this is broken */
   &.is-collapsed {
     border-right: var(--border);
   }
