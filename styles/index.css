@@ -5,24 +5,24 @@
 `-' `-'`-' ` `-'`-'  `-'`-' `-'`-'    `----' `----' `----' `-'`----' `-'`-'  `-'`-' `-'
 
 Made by: Luke Ruokaismaki
-Version: 0.2
+Version: 1.1.0
 Repo: https://github.com/luke-rmaki/rmaki-obsidian
-Built with SCSS and Gulp
+Built with PostCSS and Gulp
 
 
 */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
-@import "vars";
+@import "./modules/vars.css";
+@import "./modules/titlebar.css";
+@import "./modules/ribbons.css";
+@import "./modules/left-side-bar.css";
+@import "./modules/main-body.css";
+@import "./modules/text-styles.css";
+@import "./modules/preview.css";
+@import "./modules/right-side-bar.css";
+@import "./modules/status-bar.css";
 
 body {
   font-family: var(--font);
 }
 
-@import "titlebar";
-@import "ribbons";
-@import "left-side-bar";
-@import "main-body";
-@import "text-styles";
-@import "preview.scss";
-@import "right-side-bar";
-@import "status-bar";

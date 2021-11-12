@@ -1,9 +1,9 @@
-// ---------------------------------------------------------------- LEFT SIDEBAR
+ /* ---------------------------------------------------------------- LEFT SIDEBAR */
 .workspace-split.mod-right-split {
   background-color: var(--sidebar-background);
 
-  // resize hr between left sidebar and editor
-  .workspace-leaf-resize-handle {
+   /* resize hr between left sidebar and editor */
+  &.workspace-leaf-resize-handle {
     background-color: var(--purple-dark-2);
     width: 2px;
 
@@ -13,23 +13,23 @@
     }
   }
 
-  .workspace-tabs {
+  &.workspace-tabs {
     background-color: var(--black);
 
-    // Header section
-    .workspace-tab-header-container {
+     /* Header section */
+    &.workspace-tab-header-container {
       background-color: var(--tab-background);
 
-      // currently selected tab
-      .workspace-tab-header.is-active {
+       /* currently selected tab */
+      &.workspace-tab-header.is-active {
         color: var(--icon-hover);
       }
-      .is-active {
+      &.is-active {
         background-color: var(--black) !important;
       }
 
-      // all tabs
-      .workspace-tab-header {
+       /* all tabs */
+      &.workspace-tab-header {
         color: var(--icon-normal);
         background-color: var(--tab-background);
 
@@ -38,35 +38,36 @@
           color: var(--accent);
         }
       }
-      .is-before-active,
+      /* TODO: check this */
+      &.is-before-active,
       .is-after-active {
         background-color: var(--tab-background);
-        .workspace-tab-header-inner {
+        &.workspace-tab-header-inner {
           background-color: var(--tab-background);
         }
       }
     }
 
-    // Main sidebar (on top of workspace-tabs)
-    .workspace-leaf {
+     /* Main sidebar (on top of workspace-tabs) */
+    &.workspace-leaf {
       background-color: var(--sidebar-background);
 
-      // Icons
-      .nav-header {
-        .nav-action-button {
+       /* Icons */
+      &.nav-header {
+        &.nav-action-button {
           color: var(--icon-normal);
 
-          svg {
+          & svg {
             fill: var(--icon-normal);
-            path {
+            & path {
               stroke: var(--icon-normal);
             }
           }
           &:hover {
-            svg {
+           & svg {
               fill: var(--icon-hover);
 
-              path {
+              & path {
                 stroke: var(--icon-hover);
               }
             }
@@ -79,30 +80,30 @@
         }
       }
 
-      // Lists
-      .tree-item {
-        span {
+       /* Lists */
+      &.tree-item {
+       & span {
           color: var(--text-mute);
         }
-        .tree-item-flair {
+        &.tree-item-flair {
           color: var(--purple-light-3);
           background-color: var(--black-dark-1);
         }
 
         &:hover {
-          .tree-item-self {
+          &.tree-item-self {
             background-color: var(--black-light-1);
 
-            span {
+            & span {
               color: var(--accent);
             }
           }
         }
       }
-      .tree-item-self {
+      &.tree-item-self {
         color: var(--text-mute);
 
-        .tree-item-flair {
+        &.tree-item-flair {
           background-color: var(--black-dark-1);
           color: var(--purple-light-3);
         }
@@ -111,7 +112,7 @@
           background-color: var(--black-light-1);
           color: var(--accent);
 
-          .tree-item-flair {
+          &.tree-item-flair {
             background-color: var(--black-dark-1);
             color: var(--accent);
           }
