@@ -4,7 +4,7 @@
 
 ![Screenshot of the theme]('./../screenshot.png)
 
-Tested with Obsidian Desktop v.0.12.8 and Obsidian Mobile (Android) v.1.0.3
+Tested with Obsidian Desktop v.0.13.0 and Obsidian Mobile (Android) v.1.0.5
 
 Uses [Fira Code](https://fonts.google.com/specimen/Fira+Code).
 

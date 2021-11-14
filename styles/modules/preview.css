@@ -1,63 +1,63 @@
 .markdown-preview-view {
   font-size: var(--par);
 
-  h1,
+  & h1,
   h5 {
     color: var(--accent);
   }
 
-  h3 {
+  & h3 {
     color: var(--purple-light-3);
     font-weight: normal;
   }
 
-  h4 {
+  & h4 {
     color: var(--purple);
     font-weight: normal;
     font-style: italic;
   }
 
-  h2,
+  & h2,
   h6 {
     color: var(--purple);
     font-style: italic;
   }
 
-  h2 {
+  & h2 {
     border-bottom: 1px solid var(--accent);
   }
 
-  p,
+ & p,
   span,
   ul,
   ol {
     color: var(--text);
   }
 
-  mark {
+ & mark {
     background-color: var(--accent);
     color: var(--black-dark-1);
   }
 
-  a {
+  & a {
     color: var(--purple-light-3);
   }
 
-  blockquote {
+ & blockquote {
     border: solid 1px var(--purple);
     border-left-width: 5px;
     color: var(--text);
   }
-  table th {
+  & table th {
     color: var(--accent);
   }
 
-  hr {
+ & hr {
     border-color: var(--purple-dark-3);
   }
 
-  // Display container
-  .markdown-preview-section {
+   /* Display container */
+ & .markdown-preview-section {
     max-width: 1000px !important;
   }
 }

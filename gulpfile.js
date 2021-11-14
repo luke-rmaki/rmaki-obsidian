@@ -1,15 +1,17 @@
 const {src, dest, watch} = require("gulp");
-const sass = require("gulp-sass");
+const postcss = require("gulp-postcss");
+const postcssPresetEnv = require('postcss-preset-env');
+const atImport = require("postcss-import");
 const rename = require("gulp-rename")
 const concat = require("gulp-concat");
 require('dotenv').config();
 
-sass.compiler = require("node-sass");
-
-function processSass() {
+function processCSS() {
   console.log(process.env.DEST)
-  return src("./styles/**/*.scss")
-    .pipe(sass().on("error", sass.logError))
+  return src("./styles/index.css")
+    .pipe(postcss([atImport, postcssPresetEnv({features: {
+    'nesting-rules': true
+  }})]))
     .pipe(concat("obsidian.css"))
     .pipe(dest("./"))
     .pipe(rename("./Rmaki-Obsidian.css"))
@@ -18,8 +20,8 @@ function processSass() {
 }
 
 
-exports.build = processSass;
+exports.build = processCSS;
 
 exports.default = () => {
-  watch("./styles/**/*.scss", {ignoreInitial: false}, processSass);
+  watch("./styles/**/*.css", {ignoreInitial: false}, processCSS);
 }
