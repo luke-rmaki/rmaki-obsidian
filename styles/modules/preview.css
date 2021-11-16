@@ -2,7 +2,7 @@
   font-size: var(--par);
 
   & h1,
-  h5 {
+  & h5 {
     color: var(--accent);
   }
 
@@ -18,7 +18,7 @@
   }
 
   & h2,
-  h6 {
+  & h6 {
     color: var(--purple);
     font-style: italic;
   }
@@ -28,9 +28,9 @@
   }
 
  & p,
-  span,
-  ul,
-  ol {
+ & span,
+ & ul,
+ & ol {
     color: var(--text);
   }
 

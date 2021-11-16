@@ -6,34 +6,34 @@
 }
 .mod-root {
    /* Workspace leaf is each editor: mod-active class is applied to the active editor */
-  &.workspace-leaf {
+  & .workspace-leaf {
      /* Workspace leaf content has a data attribute for empty if there is no file */
-    &.workspace-leaf-content {
+    & .workspace-leaf-content {
        /* ----------------------------------- Editor header */
-      &.view-header {
+      & .view-header {
          /* Important used to avoid crazy nesting */
         background-color: var(--editor-background) !important;
         border-top: none;
         border-bottom: var(--border) !important;
 
-        &.view-header-title-container::after {
+        & .view-header-title-container::after {
           background: var(--editor-background) !important;
         }
 
          /* File icon */
-        &.view-header-icon {
+        & .view-header-icon {
           color: var(--editor-icons);
           &:hover {
             color: var(--icon-hover);
           }
         }
 
-        &.view-header-title {
+        & .view-header-title {
           color: var(--editor-title);
         }
 
          /* Action icons */
-        &.view-action {
+        & .view-action {
           color: var(--editor-icons);
           &:hover {
             color: var(--icon-hover);
@@ -42,14 +42,14 @@
       }
 
        /* ------------------------------------ Content */
-      &.view-content {
+      & .view-content {
         background-color: var(--editor-background);
 
          /* Empty window content */
-        &.empty-state-container {
+        & .empty-state-container {
           color: var(--text-mute);
 
-          &.empty-state-action {
+          & .empty-state-action {
             color: var(--text-mute);
 
             &:hover {
@@ -59,45 +59,54 @@
         }
 
          /* -------------------------------- Editor styles */
-        &.markdown-source-view {
+        & .markdown-source-view {
           font-size: var(--par);
+
+          & .CodeMirror-cursors {
+            z-index: 100;
+          }
+
            /* Cursor insert mode */
-          &.CodeMirror-cursor {
+          & .CodeMirror-cursor {
             border-left: 1px solid var(--accent);
           }
 
-          &.CodeMirror {
+          & .CodeMirror {
             max-width: 70vw;
           }
 
            /* Cursor normal */
-          &.cm-fat-cursor .CodeMirror-cursor {
-            background: var(--accent);
+          & .cm-fat-cursor  {
+           & .CodeMirror-cursor {
+              background: var(--accent);
+              z-index: 100;
+            }
+
           }
 
            /* Gutters Desktop */
-          &.CodeMirror-gutters .CodeMirror-gutter {
+          & .CodeMirror-gutters .CodeMirror-gutter {
             background-color: var(--editor-background);
           }
-          &.CodeMirror-linenumber {
+          & .CodeMirror-linenumber {
             color: var(--line-number);
             font-size: var(--par);
           }
 
            /* Gutters Mobile */
-          &.cm-gutters {
+          & .cm-gutters {
             background-color: var(--editor-background) !important;
-            &.cm-foldGutter {
+            & .cm-foldGutter {
               background: var(--editor-background);
               span[title="Unfold line"] {
                 /* color: var(--purple);  doesn't work */
               }
             }
 
-            &.cm-lineNumbers {
+            & .cm-lineNumbers {
               background: var(--editor-background);
 
-              &.cm-gutterElement {
+              & .cm-gutterElement {
                 color: var(--line-number);
               }
             }
@@ -107,10 +116,10 @@
            /* See _text-styles.scss */
 
            /* ------ Active line styles */
-          &.CodeMirror-activeline {
+          & .CodeMirror-activeline {
             background-color: var(--current-line-bg);
 
-            &.CodeMirror-linenumber {
+            & .CodeMirror-linenumber {
               color: var(--accent);
             }
           }

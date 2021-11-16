@@ -18,14 +18,14 @@ Twitter: [luke-rmaki](https://twitter.com/luke_rmaki)
 
 ## To Do
 
-- [ ] Search result hover colors
-- [ ] Tag pane nested hover style bug
-- [ ] Linked mention nested hover
+- [x] Search result hover colors
+- [x] Tag pane nested hover style bug
+- [x] Linked mention nested hover
 - [ ] Linked mention icon active
-- [ ] Outline hover
-- [ ] Editor popups
+- [x] Outline hover
+- [x] Editor popups
 - [ ] Graph view
-- [ ] Mobile active folder style
+- [x] Mobile active folder style
 
 ## How to install
 ### Option 1 (Add from Obsidian)

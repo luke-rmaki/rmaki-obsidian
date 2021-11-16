@@ -2,12 +2,11 @@
   background-color: var(--black-dark-1);
   border-bottom: var(--border);
 
-  &.titlebar-text {
-    color: var(--white-dark-1);
+  & .titlebar-text {
+      color: var(--white-dark-1);
   }
-
-  &.titlebar-button {
-    color: var(--white-dark-2);
+  
+  & .titlebar-button {
+      color: var(--white-dark-2);
   }
-
 }
