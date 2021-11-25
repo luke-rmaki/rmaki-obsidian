@@ -743,9 +743,20 @@ Built with PostCSS and Gulp
     color: var(--black-dark-1);
   }
 .markdown-preview-view a {
-    color: hsl(246, 28%, 63%);
-    color: var(--purple-light-3);
+    color: hsl(212, 61%, 91%);
+    color: var(--white);
+    text-decoration: underline;
+    -webkit-text-decoration-color: hsl(164, 68%, 72%) !important;
+            text-decoration-color: hsl(164, 68%, 72%) !important;
+    -webkit-text-decoration-color: var(--accent) !important;
+            text-decoration-color: var(--accent) !important
   }
+.markdown-preview-view a:hover {
+      background :hsl(164, 68%, 72%);
+      background :var(--accent);
+      color: hsl(240, 7%, 12%);
+      color: var(--black);
+    }
 .markdown-preview-view blockquote {
     border: solid 1px hsl(246, 28%, 48%);
     border: solid 1px var(--purple);

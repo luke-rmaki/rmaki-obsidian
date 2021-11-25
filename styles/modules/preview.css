@@ -40,7 +40,14 @@
   }
 
   & a {
-    color: var(--purple-light-3);
+    color: var(--white);
+    text-decoration: underline;
+    text-decoration-color: var(--accent) !important;
+
+    &:hover {
+      background :var(--accent);
+      color: var(--black);
+    }
   }
 
  & blockquote {
