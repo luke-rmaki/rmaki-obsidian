@@ -10,14 +10,14 @@
   --list: var(--purple);
 }
 
- /* ------------- BASE LINE STYLING */
+/* ------------- BASE LINE STYLING */
 .CodeMirror-line,
 .cm-line {
   & span {
     color: var(--text);
   }
 
-   /* ---- HEADINGS */
+  /* ---- HEADINGS */
   &.HyperMD-header {
     & .cm-header {
       font-size: var(--heading) !important;
@@ -28,14 +28,14 @@
     }
   }
 
-   /* ---- LIST */
+  /* ---- LIST */
   &.HyperMD-list-line {
     & .cm-formatting {
       color: var(--purple);
     }
   }
 
-   /* BOLD AND ITALICS */
+  /* BOLD AND ITALICS */
   & .cm-em,
   & .cm-strong {
     color: var(--purple-light-2);
@@ -44,7 +44,7 @@
     }
   }
 
-   /* HIGHLIGHT */
+  /* HIGHLIGHT */
   & .cm-formatting.cm-highlight {
     background-color: var(--accent);
     color: var(--black-dark-1);
@@ -53,38 +53,42 @@
     background-color: var(--accent);
     color: var(--black-dark-1);
   }
+  & .cm-highlight {
+    background-color: var(--accent);
+    color: var(--black-dark-1);
+  }
 
-   /* ---- QUOTE */
+  /* ---- QUOTE */
   &.HyperMD-quote {
     & .cm-quote {
       color: var(--text);
-      }
+    }
     & .cm-formatting {
       color: var(--accent);
     }
   }
 
-   /* ---- CODE BLOCK */
+  /* ---- CODE BLOCK */
   &.HyperMD-codeblock {
     background-color: var(--black);
     color: var(--white);
-    
+
     &.HyperMD-codeblock-begin,
     &.HyperMD-codeblock-end {
-    & .cm-formatting {
+      & .cm-formatting {
         color: var(--accent);
       }
     }
   }
 
-   /* ---- HR */
-   &.HyperMD-hr {
+  /* ---- HR */
+  &.HyperMD-hr {
     & .cm-hr {
       color: var(--accent);
     }
   }
 
-   /* ---- LINKS */
+  /* ---- LINKS */
   & span.cm-formatting-link {
     color: var(--purple);
   }
@@ -93,7 +97,7 @@
     color: var(--accent);
   }
 
-   /* ---- FRONTMATTER */
+  /* ---- FRONTMATTER */
   & .cm-hmd-frontmatter {
     font-size: var(--small);
     color: var(--text-mute);

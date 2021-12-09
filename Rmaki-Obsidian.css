@@ -502,7 +502,7 @@ Built with PostCSS and Gulp
             border-left: 1px solid hsl(164, 68%, 72%);
             border-left: 1px solid var(--accent);
           }
-.mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror {
+.mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror, .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-contentContainer {
             max-width: 70vw;
           }
 .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view {
@@ -584,7 +584,7 @@ Built with PostCSS and Gulp
 .CodeMirror-line,
 .cm-line {
 
-   /* ---- HEADINGS */
+  /* ---- HEADINGS */
 }
 .CodeMirror-line.HyperMD-header .cm-header, .cm-line.HyperMD-header .cm-header {
       font-size: 1.1rem !important;
@@ -599,7 +599,7 @@ Built with PostCSS and Gulp
 .CodeMirror-line,
 .cm-line {
 
-   /* ---- LIST */
+  /* ---- LIST */
 }
 .CodeMirror-line.HyperMD-list-line .cm-formatting, .cm-line.HyperMD-list-line .cm-formatting {
       color: hsl(246, 28%, 48%);
@@ -608,7 +608,7 @@ Built with PostCSS and Gulp
 .CodeMirror-line,
 .cm-line {
 
-   /* BOLD AND ITALICS */
+  /* BOLD AND ITALICS */
 }
 .CodeMirror-line .cm-em,
   .CodeMirror-line .cm-strong,
@@ -624,7 +624,7 @@ Built with PostCSS and Gulp
 .CodeMirror-line,
 .cm-line {
 
-   /* HIGHLIGHT */
+  /* HIGHLIGHT */
 }
 .CodeMirror-line .cm-formatting.cm-highlight, .cm-line .cm-formatting.cm-highlight {
     background-color: hsl(164, 68%, 72%);
@@ -638,15 +638,21 @@ Built with PostCSS and Gulp
     color: hsl(240, 7%, 7%);
     color: var(--black-dark-1);
   }
+.CodeMirror-line .cm-highlight, .cm-line .cm-highlight {
+    background-color: hsl(164, 68%, 72%);
+    background-color: var(--accent);
+    color: hsl(240, 7%, 7%);
+    color: var(--black-dark-1);
+  }
 .CodeMirror-line,
 .cm-line {
 
-   /* ---- QUOTE */
+  /* ---- QUOTE */
 }
 .CodeMirror-line.HyperMD-quote .cm-quote, .cm-line.HyperMD-quote .cm-quote {
       color: hsl(212, 61%, 91%);
       color: var(--text);
-      }
+    }
 .CodeMirror-line.HyperMD-quote .cm-formatting, .cm-line.HyperMD-quote .cm-formatting {
       color: hsl(164, 68%, 72%);
       color: var(--accent);
@@ -654,7 +660,7 @@ Built with PostCSS and Gulp
 .CodeMirror-line,
 .cm-line {
 
-   /* ---- CODE BLOCK */
+  /* ---- CODE BLOCK */
 }
 .CodeMirror-line.HyperMD-codeblock, .cm-line.HyperMD-codeblock {
     background-color: hsl(240, 7%, 12%);
@@ -669,7 +675,7 @@ Built with PostCSS and Gulp
 .CodeMirror-line,
 .cm-line {
 
-   /* ---- HR */
+  /* ---- HR */
 }
 .CodeMirror-line.HyperMD-hr .cm-hr, .cm-line.HyperMD-hr .cm-hr {
       color: hsl(164, 68%, 72%);
@@ -678,7 +684,7 @@ Built with PostCSS and Gulp
 .CodeMirror-line,
 .cm-line {
 
-   /* ---- LINKS */
+  /* ---- LINKS */
 }
 .CodeMirror-line span.cm-formatting-link, .cm-line span.cm-formatting-link {
     color: hsl(246, 28%, 48%);
@@ -691,7 +697,7 @@ Built with PostCSS and Gulp
 .CodeMirror-line,
 .cm-line {
 
-   /* ---- FRONTMATTER */
+  /* ---- FRONTMATTER */
 }
 .CodeMirror-line .cm-hmd-frontmatter, .cm-line .cm-hmd-frontmatter {
     font-size: 0.7rem;

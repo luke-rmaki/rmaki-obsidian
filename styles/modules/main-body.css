@@ -71,7 +71,7 @@
             border-left: 1px solid var(--accent);
           }
 
-          & .CodeMirror {
+          & .CodeMirror, & .cm-contentContainer {
             max-width: 70vw;
           }
 
