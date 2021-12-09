@@ -21,6 +21,7 @@ Twitter: [luke-rmaki](https://twitter.com/luke_rmaki)
 - [x] Search result hover colors
 - [x] Tag pane nested hover style bug
 - [x] Linked mention nested hover
+- [ ] Fix live preview styling
 - [ ] Linked mention icon active
 - [x] Outline hover
 - [x] Editor popups
