@@ -1,0 +1,40 @@
+.workspace-tabs .workspace-tab-header-container {
+  /* tab icon bar background */
+  background-color: var(--tab-background);
+  & .is-before-active,
+  & .is-after-active {
+    background-color: var(--tab-background);
+    & .workspace-tab-header-inner {
+      background-color: var(--tab-background);
+    }
+  }
+
+  /* all tabs */
+  & .workspace-tab-header {
+    color: var(--icon-normal);
+    background-color: var(--tab-background);
+
+    & .workspace-tab-header-inner {
+      background-color: var(--tab-background);
+    }
+    &:hover,
+    &:focus {
+      color: var(--accent);
+    }
+  }
+  /* Active tab */
+  & .is-active {
+    background-color: var(--black) !important;
+    color: var(--icon-hover);
+
+    & .workspace-tab-header-inner {
+      background-color: var(--black) !important;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  }
+}
+
+.workspace-tabs {
+  background-color: var(--tab-background);
+}

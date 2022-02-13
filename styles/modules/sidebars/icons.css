@@ -1,0 +1,30 @@
+.nav-header {
+  & .nav-action-button {
+    color: var(--icon-normal);
+
+    & svg {
+      fill: var(--icon-normal);
+      & path {
+        stroke: var(--icon-normal);
+      }
+    }
+    &:hover {
+      & svg {
+        fill: var(--icon-hover);
+
+        & path {
+          stroke: var(--icon-hover);
+        }
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--icon-hover);
+    }
+    &.is-active {
+      color: var(--black-dark-1);
+      background: var(--accent);
+    }
+  }
+}

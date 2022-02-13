@@ -14,19 +14,29 @@ Built with PostCSS and Gulp
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 @import "./modules/vars.css";
 @import "./modules/titlebar.css";
+@import "./modules//sidebars/sidebars.css";
 @import "./modules/ribbons.css";
-@import "./modules/left-side-bar.css";
+/* @import "./modules/left-side-bar.css"; */
 @import "./modules/main-body.css";
 @import "./modules/text-styles.css";
 @import "./modules/preview.css";
-@import "./modules/right-side-bar.css";
+/* @import "./modules/right-side-bar.css"; */
 @import "./modules/status-bar.css";
 
 body {
-  font-family: var(--font);
+  font-family: var(--font) !important;
 }
 
 .tooltip {
   background: var(--accent);
   color: var(--black-dark-1);
+}
+
+.workspace-leaf-resize-handle {
+  background-color: var(--purple-dark-2);
+  width: 2px;
+
+  &:hover, &:focus {
+    background-color: var(--accent);
+  }
 }

@@ -15,7 +15,7 @@
   & .workspace-leaf-resize-handle {
     background-color: var(--purple-dark-2);
     width: 2px;
-
+    
     &:hover,
     &:focus {
       background-color: var(--accent);

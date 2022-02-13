@@ -7,7 +7,7 @@
 `-' `-'`-' ` `-'`-'  `-'`-' `-'`-'    `----' `----' `----' `-'`----' `-'`-'  `-'`-' `-'
 
 Made by: Luke Ruokaismaki
-Version: 1.1.0
+Version: 1.3.0
 Repo: https://github.com/luke-rmaki/rmaki-obsidian
 Built with PostCSS and Gulp
 
@@ -85,6 +85,252 @@ Built with PostCSS and Gulp
       color: hsl(212, 61%, 81%);
       color: var(--white-dark-2);
   }
+.workspace-tabs .workspace-tab-header-container {
+  /* tab icon bar background */
+  background-color: hsl(240, 7%, 7%);
+  background-color: var(--tab-background)
+}
+.workspace-tabs .workspace-tab-header-container .is-before-active,
+  .workspace-tabs .workspace-tab-header-container .is-after-active {
+    background-color: hsl(240, 7%, 7%);
+    background-color: var(--tab-background)
+  }
+.workspace-tabs .workspace-tab-header-container .is-before-active .workspace-tab-header-inner, .workspace-tabs .workspace-tab-header-container .is-after-active .workspace-tab-header-inner {
+      background-color: hsl(240, 7%, 7%);
+      background-color: var(--tab-background);
+    }
+.workspace-tabs .workspace-tab-header-container {
+
+  /* all tabs */
+}
+.workspace-tabs .workspace-tab-header-container .workspace-tab-header {
+    color: hsl(246, 28%, 48%);
+    color: var(--icon-normal);
+    background-color: hsl(240, 7%, 7%);
+    background-color: var(--tab-background)
+  }
+.workspace-tabs .workspace-tab-header-container .workspace-tab-header .workspace-tab-header-inner {
+      background-color: hsl(240, 7%, 7%);
+      background-color: var(--tab-background);
+    }
+.workspace-tabs .workspace-tab-header-container .workspace-tab-header:hover,
+    .workspace-tabs .workspace-tab-header-container .workspace-tab-header:focus {
+      color: hsl(164, 68%, 72%);
+      color: var(--accent);
+    }
+.workspace-tabs .workspace-tab-header-container {
+  /* Active tab */
+}
+.workspace-tabs .workspace-tab-header-container .is-active {
+    background-color: hsl(240, 7%, 12%) !important;
+    background-color: var(--black) !important;
+    color: hsl(164, 68%, 72%);
+    color: var(--icon-hover)
+  }
+.workspace-tabs .workspace-tab-header-container .is-active .workspace-tab-header-inner {
+      background-color: hsl(240, 7%, 12%) !important;
+      background-color: var(--black) !important;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+.workspace-tabs {
+  background-color: hsl(240, 7%, 7%);
+  background-color: var(--tab-background);
+}
+.nav-header .nav-action-button {
+    color: hsl(246, 28%, 48%);
+    color: var(--icon-normal)
+  }
+.nav-header .nav-action-button svg {
+      fill: hsl(246, 28%, 48%);
+      fill: var(--icon-normal)
+    }
+.nav-header .nav-action-button svg path {
+        stroke: hsl(246, 28%, 48%);
+        stroke: var(--icon-normal);
+      }
+.nav-header .nav-action-button:hover svg {
+        fill: hsl(164, 68%, 72%);
+        fill: var(--icon-hover)
+      }
+.nav-header .nav-action-button:hover svg path {
+          stroke: hsl(164, 68%, 72%);
+          stroke: var(--icon-hover);
+        }
+.nav-header .nav-action-button:hover,
+    .nav-header .nav-action-button:focus {
+      color: hsl(164, 68%, 72%);
+      color: var(--icon-hover);
+    }
+.nav-header .nav-action-button.is-active {
+      color: hsl(240, 7%, 7%);
+      color: var(--black-dark-1);
+      background: hsl(164, 68%, 72%);
+      background: var(--accent);
+    }
+.nav-folder {
+  /* Folder names */
+}
+.nav-folder .nav-folder-title .nav-folder-title-content {
+    color: hsl(211, 19%, 60%);
+    color: var(--text-mute);
+    font-weight: bold;
+  }
+.nav-folder {
+
+  /*  File names */
+}
+.nav-folder .nav-file .nav-file-title {
+    color: hsl(211, 19%, 60%);
+    color: var(--text-mute);
+    font-style: italic;
+  }
+.nav-folder {
+
+  /* Hover/focus */
+}
+.nav-folder .nav-folder-title:hover,
+  .nav-folder .nav-folder-title:focus {
+    background-color: hsl(240, 7%, 17%) !important;
+    background-color: var(--explorer-hover) !important
+  }
+.nav-folder .nav-folder-title:hover .nav-folder-title-content, .nav-folder .nav-folder-title:focus .nav-folder-title-content {
+      background-color: hsl(240, 7%, 17%);
+      background-color: var(--explorer-hover);
+      color: hsl(164, 68%, 72%) !important;
+      color: var(--accent) !important;
+    }
+.nav-folder .nav-file:hover .nav-file-title, .nav-folder .nav-file:focus .nav-file-title {
+      color: hsl(164, 68%, 72%);
+      color: var(--accent);
+      background-color: hsl(240, 7%, 17%);
+      background-color: var(--explorer-hover);
+    }
+.nav-folder {
+
+  /* Active file */
+}
+.nav-folder .is-active {
+    background-color: hsl(164, 68%, 72%);
+    background-color: var(--explorer-active-bg);
+    color: hsl(240, 7%, 12%) !important;
+    color: var(--black) !important
+  }
+.nav-folder .is-active:hover,
+    .nav-folder .is-active:focus {
+      background-color: hsl(164, 68%, 72%) !important;
+      background-color: var(--explorer-active-bg) !important;
+    }
+/* Search input */
+.search-input-container input {
+    background-color: hsl(240, 7%, 7%);
+    background-color: var(--black-dark-1);
+    color: hsl(212, 61%, 91%);
+    color: var(--white);
+  }
+.search-input-container .search-input-clear-button::before {
+    color: hsl(164, 68%, 72%);
+    color: var(--accent);
+  }
+.search-result-container .tree-item {
+    /* Hover/focus */
+  }
+.search-result-container .tree-item:hover,
+    .search-result-container .tree-item:focus {
+      background-color: hsl(240, 7%, 17%);
+      background-color: var(--explorer-hover)
+    }
+.search-result-container .tree-item:hover .tree-item-inner,
+      .search-result-container .tree-item:hover .tree-item-self,
+      .search-result-container .tree-item:focus .tree-item-inner,
+      .search-result-container .tree-item:focus .tree-item-self {
+        background-color: hsl(240, 7%, 17%);
+        background-color: var(--explorer-hover);
+        color: hsl(164, 68%, 72%);
+        color: var(--accent);
+      }
+.search-result-container .tree-item:hover .tree-item-flair-outer .tree-item-flair, .search-result-container .tree-item:focus .tree-item-flair-outer .tree-item-flair {
+          color: hsl(240, 7%, 12%);
+          color: var(--black);
+          background-color: hsl(164, 68%, 72%);
+          background-color: var(--accent);
+        }
+.search-result-container .tree-item .tree-item-inner {
+      color: hsl(211, 19%, 60%);
+      color: var(--text-mute);
+    }
+.search-result-container .tree-item {
+    /* Badge */
+  }
+.search-result-container .tree-item .tree-item-flair-outer .tree-item-flair {
+        background-color: hsl(246, 28%, 48%);
+        background-color: var(--purple);
+        color: hsl(240, 7%, 12%);
+        color: var(--black);
+      }
+.search-result-container .tree-item {
+
+    /* Search result match */
+  }
+.search-result-container .tree-item .search-result-file-match {
+      background-color: hsl(240, 7%, 12%);
+      background-color: var(--sidebar-background)
+    }
+.search-result-container .tree-item .search-result-file-match .search-result-file-matched-text {
+        background-color: hsl(246, 28%, 38%);
+        background-color: var(--purple-dark-2);
+        color: hsl(212, 61%, 91%);
+        color: var(--white);
+      }
+:root {
+  --tab-background: var(--black-dark-1);
+  --explorer-active-bg: var(--accent);
+  --explorer-active: var(--black);
+  --explorer-hover: var(--black-light-1);
+  --search-bar: var(--black-light-1);
+  --search-hover: var(--purple);
+}
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
+  /* Main sidebar (on top of workspace-tabs) */
+}
+.workspace-split.mod-left-split .workspace-leaf, .workspace-split.mod-right-split .workspace-leaf {
+    background-color: hsl(240, 7%, 12%);
+    background-color: var(--sidebar-background);
+  }
+.workspace-split.mod-left-split .tree-item-self:hover,
+    .workspace-split.mod-left-split .tree-item-self:focus,
+    .workspace-split.mod-right-split .tree-item-self:hover,
+    .workspace-split.mod-right-split .tree-item-self:focus {
+      background-color: hsl(240, 7%, 17%);
+      background-color: var(--explorer-hover);
+    }
+/* Starred content */
+[data-type="starred"] .nav-file .nav-file-icon {
+    color: hsl(246, 28%, 48%);
+    color: var(--icon-normal);
+  }
+[data-type="starred"] .nav-file .nav-file-title-content {
+    color: hsl(211, 19%, 60%);
+    color: var(--text-mute);
+  }
+[data-type="starred"] .nav-file:hover,
+  [data-type="starred"] .nav-file:focus {
+    background-color: hsl(240, 7%, 17%);
+    background-color: var(--explorer-hover)
+  }
+[data-type="starred"] .nav-file:hover *, [data-type="starred"] .nav-file:focus * {
+      background-color: hsl(240, 7%, 17%) !important;
+      background-color: var(--explorer-hover) !important;
+    }
+[data-type="starred"] .nav-file:hover .nav-file-icon, [data-type="starred"] .nav-file:focus .nav-file-icon {
+      color: hsl(164, 68%, 72%);
+      color: var(--icon-hover);
+    }
+[data-type="starred"] .nav-file:hover .nav-file-title-content, [data-type="starred"] .nav-file:focus .nav-file-title-content {
+      color: hsl(164, 68%, 72%);
+      color: var(--accent);
+    }
 .side-dock-ribbon {
   background-color: hsl(240, 7%, 7%);
   background-color: var(--ribbon-background)
@@ -117,295 +363,7 @@ Built with PostCSS and Gulp
     border-left: var(--border);
   } */
 }
-:root {
-  --tab-background: var(--black-dark-1);
-  --explorer-active-bg: var(--accent);
-  --explorer-active: var(--black);
-  --explorer-hover: var(--black-light-1);
-  --search-bar: var(--black-light-1);
-  --search-hover: var(--purple);
-}
-/*  ---------------------------------------------------------------- LEFT SIDEBAR */
-.workspace-split.mod-left-split {
-  background-color: hsl(240, 7%, 12%);
-  background-color: var(--sidebar-background)
-
-  /* resize hr between left sidebar and editor */
-}
-.workspace-split.mod-left-split .workspace-leaf-resize-handle {
-    background-color: hsl(246, 28%, 38%);
-    background-color: var(--purple-dark-2);
-    width: 2px
-  }
-.workspace-split.mod-left-split .workspace-leaf-resize-handle:hover,
-    .workspace-split.mod-left-split .workspace-leaf-resize-handle:focus {
-      background-color: hsl(164, 68%, 72%);
-      background-color: var(--accent);
-    }
-.workspace-split.mod-left-split .workspace-tabs {
-    background-color: hsl(240, 7%, 12%);
-    background-color: var(--black)
-
-     /* Header section */
-  }
-.workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container {
-      background-color: hsl(240, 7%, 7%);
-      background-color: var(--tab-background)
-
-       /* currently selected tab */
-    }
-.workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header.is-active {
-        color: hsl(164, 68%, 72%);
-        color: var(--icon-hover);
-      }
-.workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-active {
-        background-color: hsl(240, 7%, 12%) !important;
-        background-color: var(--black) !important;
-      }
-.workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container {
-
-      /*  all tabs */
-    }
-.workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header {
-        color: hsl(246, 28%, 48%);
-        color: var(--icon-normal);
-        background-color: hsl(240, 7%, 7%);
-        background-color: var(--tab-background)
-      }
-.workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:hover,
-        .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:focus {
-          color: hsl(164, 68%, 72%);
-          color: var(--accent);
-        }
-.workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-before-active,
-      .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-after-active {
-        background-color: hsl(240, 7%, 7%);
-        background-color: var(--tab-background)
-      }
-.workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-before-active .workspace-tab-header-inner, .workspace-split.mod-left-split .workspace-tabs .workspace-tab-header-container .is-after-active .workspace-tab-header-inner {
-          background-color: hsl(240, 7%, 7%);
-          background-color: var(--tab-background);
-        }
-.workspace-split.mod-left-split .workspace-tabs {
-
-    /* Main sidebar (on top of workspace-tabs) */
-  }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf {
-      background-color: hsl(240, 7%, 12%);
-      background-color: var(--sidebar-background)
-
-      /*  New file/folder .e.c.t */
-    }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button {
-          color: hsl(246, 28%, 48%);
-          color: var(--icon-normal)
-        }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:hover,
-          .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:focus {
-            color: hsl(164, 68%, 72%);
-            color: var(--icon-hover);
-          }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf {
-
-      /*  File explorer */
-    }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container {
-        /*  folders and main title */
-      }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-title:hover,
-          .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-title:focus {
-            background-color: hsl(240, 7%, 17%);
-            background-color: var(--explorer-hover)
-          }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-title:hover .nav-folder-title-content, .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-title:focus .nav-folder-title-content {
-              background-color: hsl(240, 7%, 17%);
-              background-color: var(--explorer-hover);
-              color: hsl(164, 68%, 72%);
-              color: var(--accent);
-            }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-folder-title .nav-folder-title-content {
-            color: hsl(211, 19%, 60%);
-            color: var(--text-mute);
-            font-weight: bold;
-          }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container {
-
-        /*  file names */
-      }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file,
-          .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file-title {
-            color: hsl(211, 19%, 60%);
-            color: var(--text-mute);
-            font-style: italic
-          }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file:hover,
-            .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file:focus,
-            .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file-title:hover,
-            .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .nav-file-title:focus {
-              color: hsl(164, 68%, 72%);
-              color: var(--accent);
-              background-color: hsl(240, 7%, 17%);
-              background-color: var(--explorer-hover);
-            }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active, 
-          .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file.is-flashing {
-            background-color: hsl(164, 68%, 72%);
-            background-color: var(--explorer-active-bg)
-          }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active > div, 
-          .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file.is-flashing > div {
-              color: hsl(240, 7%, 12%);
-              color: var(--explorer-active)
-          }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active:hover,
-            .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active:focus,
-            .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file.is-flashing:hover,
-            .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file.is-flashing:focus {
-              background-color: hsl(164, 68%, 72%);
-              background-color: var(--explorer-active-bg)
-            }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active:hover > div,
-            .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file .is-active:focus > div,
-            .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file.is-flashing:hover > div,
-            .workspace-split.mod-left-split .workspace-tabs .workspace-leaf .nav-files-container .nav-file.is-flashing:focus > div {
-                color: hsl(240, 7%, 12%);
-                color: var(--explorer-active)
-            }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf {
-
-      /*  Search tab */
-    }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] {
-        /*  buttons */
-      }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .nav-action-button {
-          color: hsl(246, 28%, 48%);
-          color: var(--icon-normal)
-        }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .nav-action-button .is-active {
-            color: hsl(164, 68%, 72%);
-            color: var(--icon-hover);
-            background-color: hsl(240, 7%, 12%);
-            background-color: var(--sidebar-background);
-            border: 1px solid hsl(164, 68%, 72%);
-            border: 1px solid var(--icon-hover);
-          }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .nav-action-button:hover {
-            color: hsl(164, 68%, 72%);
-            color: var(--icon-hover);
-          }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] {
-        /*  search bar */
-      }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-input-container input {
-          background-color: hsl(240, 7%, 17%);
-          background-color: var(--search-bar);
-          color: hsl(211, 19%, 60%);
-          color: var(--text-mute);
-        }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] {
-        /*  search results list */
-      }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container {
-          background-color: hsl(240, 7%, 12%);
-          background-color: var(--sidebar-background)
-
-          /*  search result item */
-        }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result {
-            /*  search result title */
-          }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .tree-item-inner {
-              color: hsl(211, 19%, 60%);
-              color: var(--text-mute);
-            }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result {
-            /*  search result body */
-          }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .search-result-file-match {
-              color: hsl(211, 19%, 60%);
-              color: var(--text-mute)
-            }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .search-result-file-match:hover {
-                background-color: hsl(246, 28%, 48%);
-                background-color: var(--search-hover);
-                color: hsl(212, 61%, 91%);
-                color: var(--text);
-              }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .search-result-file-match {
-
-              /*  Search highlight */
-            }
-.workspace-split.mod-left-split .workspace-tabs .workspace-leaf .workspace-leaf-content[data-type="search"] .search-result-container .search-result .search-result-file-match .search-result-file-matched-text {
-                background-color: hsl(164, 68%, 72%);
-                background-color: var(--accent);
-                color: hsl(240, 7%, 12%);
-                color: var(--black);
-              }
-/*  Mobile */
-.workspace-drawer .workspace-drawer-inner {
-    /*  Global drawer styles */
-    background: hsl(240, 7%, 12%) !important;
-    background: var(--sidebar-background) !important
-  }
-.workspace-drawer .workspace-drawer-inner .workspace-drawer-header {
-      color: hsl(246, 28%, 58%);
-      color: var(--purple-light-2)
-    }
-.workspace-drawer .workspace-drawer-inner .workspace-drawer-header .workspace-drawer-header-info {
-        color: hsl(212, 61%, 91%);
-        color: var(--white);
-      }
-.workspace-drawer .workspace-drawer-inner .workspace-drawer-tab-options .workspace-drawer-tab-option-item-icon {
-        color: hsl(246, 28%, 48%);
-        color: var(--purple);
-      }
-.workspace-drawer .workspace-drawer-inner .workspace-drawer-tab-options .workspace-drawer-tab-option-item-title {
-        color: hsl(212, 61%, 91%);
-        color: var(--white);
-      }
-.workspace-drawer .workspace-drawer-inner .workspace-drawer-active-tab-container .workspace-drawer-active-tab-header .workspace-drawer-active-tab-back-icon {
-          color: hsl(164, 68%, 72%);
-          color: var(--accent);
-        }
-.workspace-drawer .workspace-drawer-inner .workspace-drawer-active-tab-container .workspace-drawer-active-tab-header .workspace-drawer-active-tab-icon {
-          color: hsl(246, 28%, 48%);
-          color: var(--purple);
-        }
-.workspace-drawer .workspace-drawer-inner .workspace-drawer-active-tab-container .workspace-drawer-active-tab-header .workspace-drawer-active-tab-title {
-          color: hsl(212, 61%, 91%);
-          color: var(--white);
-        }
-.workspace-drawer .workspace-drawer-inner .pin {
-      color: hsl(211, 19%, 60%);
-      color: var(--text-mute);
-    }
-.workspace-drawer .workspace-drawer-inner {
-
-    /*  Nav */
-  }
-.workspace-drawer .workspace-drawer-inner .nav-buttons-container .nav-action-button {
-        color: hsl(246, 28%, 48%);
-        color: var(--purple);
-      }
-.workspace-drawer .workspace-drawer-inner .nav-folder-title {
-      color: hsl(211, 19%, 60%);
-      color: var(--text-mute);
-      font-weight: bold;
-    }
-.workspace-drawer .workspace-drawer-inner .nav-file-title {
-      color: hsl(211, 19%, 60%);
-      color: var(--text-mute);
-      font-style: italic
-
-      /* TODO: check if this works */
-    }
-.workspace-drawer .workspace-drawer-inner .nav-file-title .is-active {
-        background: hsl(164, 68%, 72%);
-        background: var(--explorer-active-bg);
-        color: hsl(240, 7%, 12%);
-        color: var(--explorer-active)
-    }
+/* @import "./modules/left-side-bar.css"; */
 :root {
   --editor-icons: var(--white-dark-3);
   --editor-title: var(--white);
@@ -498,7 +456,7 @@ Built with PostCSS and Gulp
 
            /* Cursor insert mode */
         }
-.mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-cursor {
+.mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .CodeMirror-cursor, .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-cursor {
             border-left: 1px solid hsl(164, 68%, 72%);
             border-left: 1px solid var(--accent);
           }
@@ -513,6 +471,15 @@ Built with PostCSS and Gulp
               background: hsl(164, 68%, 72%);
               background: var(--accent);
               z-index: 100;
+            }
+.mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view {
+          
+          /*  live preview */
+        }
+.mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view .cm-cursorLayer .cm-fat-cursor {
+              background: hsl(164, 68%, 72%);
+              background: var(--accent);
+
             }
 .mod-root .workspace-leaf .workspace-leaf-content .view-content .markdown-source-view {
 
@@ -577,6 +544,10 @@ Built with PostCSS and Gulp
   --list: var(--purple);
 }
 /* ------------- BASE LINE STYLING */
+.cm-content {
+  font-family: "Fira Code", monospace;
+  font-family: var(--font);
+}
 .CodeMirror-line span, .cm-line span {
     color: hsl(212, 61%, 91%);
     color: var(--text);
@@ -785,194 +756,7 @@ Built with PostCSS and Gulp
 .markdown-preview-view .markdown-preview-section {
     max-width: 1000px !important;
   }
-/* ---------------------------------------------------------------- LEFT SIDEBAR */
-.workspace-split.mod-right-split {
-  background-color: hsl(240, 7%, 12%);
-  background-color: var(--sidebar-background)
-
-   /* resize hr between left sidebar and editor */
-}
-.workspace-split.mod-right-split .workspace-leaf-resize-handle {
-    background-color: hsl(246, 28%, 38%);
-    background-color: var(--purple-dark-2);
-    width: 2px
-  }
-.workspace-split.mod-right-split .workspace-leaf-resize-handle:hover,
-    .workspace-split.mod-right-split .workspace-leaf-resize-handle:focus {
-      background-color: hsl(164, 68%, 72%);
-      background-color: var(--accent);
-    }
-.workspace-split.mod-right-split .workspace-tabs {
-    background-color: hsl(240, 7%, 12%);
-    background-color: var(--black)
-
-     /* Header section */
-  }
-.workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container {
-      background-color: hsl(240, 7%, 7%);
-      background-color: var(--tab-background);
-      border-left: 0.5px solid hsl(246, 28%, 48%);
-      border-left: var(--border)
-
-       /* currently selected tab */
-    }
-.workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header.is-active {
-        color: hsl(164, 68%, 72%);
-        color: var(--icon-hover);
-      }
-.workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container.is-active {
-        background-color: hsl(240, 7%, 12%) !important;
-        background-color: var(--black) !important;
-      }
-.workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container {
-
-       /* all tabs */
-    }
-.workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header {
-        color: hsl(246, 28%, 48%);
-        color: var(--icon-normal);
-        background-color: hsl(240, 7%, 7%);
-        background-color: var(--tab-background)
-      }
-.workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header .workspace-tab-header-inner {
-          background-color: hsl(240, 7%, 7%);
-          background-color: var(--tab-background);
-        }
-.workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:hover,
-        .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header:focus {
-          color: hsl(164, 68%, 72%);
-          color: var(--accent);
-        }
-.workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .is-before-active,
-      .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .is-after-active {
-        background-color: hsl(240, 7%, 7%);
-        background-color: var(--tab-background)
-      }
-.workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .is-before-active .workspace-tab-header-inner, .workspace-split.mod-right-split .workspace-tabs .workspace-tab-header-container .is-after-active .workspace-tab-header-inner {
-          background-color: hsl(240, 7%, 7%);
-          background-color: var(--tab-background);
-        }
-.workspace-split.mod-right-split .workspace-tabs {
-
-     /* Main sidebar (on top of workspace-tabs) */
-  }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf {
-      background-color: hsl(240, 7%, 12%);
-      background-color: var(--sidebar-background)
-
-       /* Icons */
-    }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button {
-          color: hsl(246, 28%, 48%);
-          color: var(--icon-normal)
-        }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button svg {
-            fill: hsl(246, 28%, 48%);
-            fill: var(--icon-normal)
-          }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button svg path {
-              stroke: hsl(246, 28%, 48%);
-              stroke: var(--icon-normal);
-            }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:hover svg {
-              fill: hsl(164, 68%, 72%);
-              fill: var(--icon-hover)
-            }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:hover svg path {
-                stroke: hsl(164, 68%, 72%);
-                stroke: var(--icon-hover);
-              }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:hover,
-          .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button:focus {
-            color: hsl(164, 68%, 72%);
-            color: var(--icon-hover);
-          }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .nav-header .nav-action-button.is-active {
-            color: hsl(240, 7%, 7%);
-            color: var(--black-dark-1);
-            background: hsl(164, 68%, 72%);
-            background: var(--accent);
-          }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf {
-
-       /* Lists */
-    }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf  .tree-item span {
-          color: hsl(211, 19%, 60%);
-          color: var(--text-mute);
-        }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf  .tree-item .tree-item-flair {
-          color: hsl(246, 28%, 63%);
-          color: var(--purple-light-3);
-          background-color: hsl(240, 7%, 7%);
-          background-color: var(--black-dark-1);
-        }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item-self {
-        color: hsl(211, 19%, 60%);
-        color: var(--text-mute)
-      }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item-self .tree-item-flair {
-          background-color: hsl(240, 7%, 7%);
-          background-color: var(--black-dark-1);
-          color: hsl(246, 28%, 63%);
-          color: var(--purple-light-3)
-        }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item-self .tree-item-flair.tag-pane-tag-count {
-            color: hsl(212, 61%, 91%);
-            color: var(--white);
-          }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item-self:hover {
-          background-color: hsl(246, 28%, 43%);
-          background-color: var(--purple-dark-1);
-          color: hsl(164, 68%, 72%);
-          color: var(--accent)
-        }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item-self:hover .tree-item-flair {
-            background-color: hsl(212, 61%, 91%);
-            background-color: var(--white);
-            color: hsl(240, 7%, 7%);
-            color: var(--black-dark-1);
-          }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .tree-item-self:hover .tag-pane-tag-self {
-            background-color: hsl(246, 28%, 43%);
-            background-color: var(--purple-dark-1);
-            color: hsl(212, 61%, 91%);
-            color: var(--text);
-          }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf {
-
-      /* Search results */
-    }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .search-result-file-matches:hover, .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .search-result-file-matches:focus {
-          background-color: hsl(246, 28%, 43%);
-          background-color: var(--purple-dark-1)
-        }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .search-result-file-matches:hover .search-result-file-match, .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .search-result-file-matches:focus .search-result-file-match {
-            color: hsl(212, 61%, 91%);
-            color: var(--text);
-            background-color: hsl(246, 28%, 43%);
-            background-color: var(--purple-dark-1)
-          }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .search-result-file-matches:hover .search-result-file-match span, .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .search-result-file-matches:focus .search-result-file-match span {
-              color: hsl(212, 61%, 91%);
-              color: var(--text)
-            }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .search-result-file-matches:hover .search-result-file-match span.search-result-file-matched-text, .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .search-result-file-matches:focus .search-result-file-match span.search-result-file-matched-text {
-                color: hsl(240, 7%, 7%);
-                color: var(--black-dark-1);
-              }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .search-result-file-matches:hover .search-result-file-match .search-result-file-match-replace-button, .workspace-split.mod-right-split .workspace-tabs .workspace-leaf .search-result-file-matches:focus .search-result-file-match .search-result-file-match-replace-button {
-              color: hsl(212, 61%, 91%);
-              color: var(--text);
-              background-color: hsl(246, 28%, 18%);
-              background-color: var(--purple-dark-6);
-            }
-.workspace-split.mod-right-split .workspace-tabs .workspace-leaf .search-result-file-matches .search-result-file-matched-text {
-          background-color: hsl(164, 68%, 72%);
-          background-color: var(--accent);
-          color: hsl(240, 7%, 7%);
-          color: var(--black-dark-1);
-        }
+/* @import "./modules/right-side-bar.css"; */
 .status-bar {
   border-top: 0.5px solid hsl(246, 28%, 48%);
   border-top: var(--border);
@@ -988,8 +772,8 @@ Built with PostCSS and Gulp
       color: var(--accent);
     }
 body {
-  font-family: "Fira Code", monospace;
-  font-family: var(--font);
+  font-family: "Fira Code", monospace !important;
+  font-family: var(--font) !important;
 }
 .tooltip {
   background: hsl(164, 68%, 72%);
@@ -997,3 +781,12 @@ body {
   color: hsl(240, 7%, 7%);
   color: var(--black-dark-1);
 }
+.workspace-leaf-resize-handle {
+  background-color: hsl(246, 28%, 38%);
+  background-color: var(--purple-dark-2);
+  width: 2px
+}
+.workspace-leaf-resize-handle:hover, .workspace-leaf-resize-handle:focus {
+    background-color: hsl(164, 68%, 72%);
+    background-color: var(--accent);
+  }

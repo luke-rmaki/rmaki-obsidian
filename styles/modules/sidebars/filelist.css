@@ -1,0 +1,41 @@
+.nav-folder {
+  /* Folder names */
+  & .nav-folder-title .nav-folder-title-content {
+    color: var(--text-mute);
+    font-weight: bold;
+  }
+
+  /*  File names */
+  & .nav-file .nav-file-title {
+    color: var(--text-mute);
+    font-style: italic;
+  }
+
+  /* Hover/focus */
+  & .nav-folder-title:hover,
+  & .nav-folder-title:focus {
+    background-color: var(--explorer-hover) !important;
+    & .nav-folder-title-content {
+      background-color: var(--explorer-hover);
+      color: var(--accent) !important;
+    }
+  }
+  & .nav-file:hover,
+  & .nav-file:focus {
+    & .nav-file-title {
+      color: var(--accent);
+      background-color: var(--explorer-hover);
+    }
+  }
+
+  /* Active file */
+  & .is-active {
+    background-color: var(--explorer-active-bg);
+    color: var(--black) !important;
+
+    &:hover,
+    &:focus {
+      background-color: var(--explorer-active-bg) !important;
+    }
+  }
+}

@@ -67,7 +67,7 @@
           }
 
            /* Cursor insert mode */
-          & .CodeMirror-cursor {
+          & .CodeMirror-cursor, & .cm-cursor {
             border-left: 1px solid var(--accent);
           }
 
@@ -81,7 +81,14 @@
               background: var(--accent);
               z-index: 100;
             }
+          }
+          
+          /*  live preview */
+          & .cm-cursorLayer {
+            & .cm-fat-cursor {
+              background: var(--accent);
 
+            }
           }
 
            /* Gutters Desktop */

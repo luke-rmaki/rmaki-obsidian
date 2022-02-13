@@ -1,0 +1,54 @@
+/* Search input */
+.search-input-container {
+  & input {
+    background-color: var(--black-dark-1);
+    color: var(--white);
+  }
+
+  & .search-input-clear-button::before {
+    color: var(--accent);
+  }
+}
+
+.search-result-container {
+  & .tree-item {
+    /* Hover/focus */
+    &:hover,
+    &:focus {
+      background-color: var(--explorer-hover);
+      & .tree-item-inner,
+      & .tree-item-self {
+        background-color: var(--explorer-hover);
+        color: var(--accent);
+      }
+
+      & .tree-item-flair-outer {
+        & .tree-item-flair {
+          color: var(--black);
+          background-color: var(--accent);
+        }
+      }
+    }
+
+    & .tree-item-inner {
+      color: var(--text-mute);
+    }
+    /* Badge */
+    & .tree-item-flair-outer {
+      & .tree-item-flair {
+        background-color: var(--purple);
+        color: var(--black);
+      }
+    }
+
+    /* Search result match */
+    & .search-result-file-match {
+      background-color: var(--sidebar-background);
+
+      & .search-result-file-matched-text {
+        background-color: var(--purple-dark-2);
+        color: var(--white);
+      }
+    }
+  }
+}

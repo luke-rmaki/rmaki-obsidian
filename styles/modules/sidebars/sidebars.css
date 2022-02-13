@@ -1,0 +1,56 @@
+@import "./tabs.css";
+@import "./icons.css";
+@import "./filelist.css";
+@import "./search.css";
+
+:root {
+  --tab-background: var(--black-dark-1);
+  --explorer-active-bg: var(--accent);
+  --explorer-active: var(--black);
+  --explorer-hover: var(--black-light-1);
+  --search-bar: var(--black-light-1);
+  --search-hover: var(--purple);
+}
+
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
+  /* Main sidebar (on top of workspace-tabs) */
+  & .workspace-leaf {
+    background-color: var(--sidebar-background);
+  }
+
+  & .tree-item-self {
+    &:hover,
+    &:focus {
+      background-color: var(--explorer-hover);
+    }
+  }
+}
+
+/* Starred content */
+[data-type="starred"] .nav-file {
+  & .nav-file-icon {
+    color: var(--icon-normal);
+  }
+
+  & .nav-file-title-content {
+    color: var(--text-mute);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--explorer-hover);
+
+    & * {
+      background-color: var(--explorer-hover) !important;
+    }
+
+    & .nav-file-icon {
+      color: var(--icon-hover);
+    }
+    & .nav-file-title-content {
+      color: var(--accent);
+    }
+  }
+}
+
