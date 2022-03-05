@@ -13,10 +13,12 @@
 /* ------------- BASE LINE STYLING */
 .cm-content {
   font-family: var(--font);
+  max-width: 90vw !important;
 }
 .CodeMirror-line,
 .cm-line {
-  
+  max-width: 90vw !important;
+
   & span {
     color: var(--text);
   }

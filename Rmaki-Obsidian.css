@@ -547,6 +547,11 @@ Built with PostCSS and Gulp
 .cm-content {
   font-family: "Fira Code", monospace;
   font-family: var(--font);
+  max-width: 90vw !important;
+}
+.CodeMirror-line,
+.cm-line {
+  max-width: 90vw !important
 }
 .CodeMirror-line span, .cm-line span {
     color: hsl(212, 61%, 91%);
