@@ -1,40 +1,49 @@
-.markdown-preview-view {
+.markdown-preview-view,
+.is-live-preview {
   font-size: var(--par);
+  font-family: var(--font-family);
 
   & h1,
-  & h5 {
+  & h5,
+  & .HyperMD-header-1 .cm-header-1 {
     color: var(--accent);
   }
 
-  & h3 {
+  & h3,
+  & .HyperMD-header-3 .cm-header-3 {
     color: var(--purple-light-3);
     font-weight: normal;
   }
 
-  & h4 {
+  & h4,
+  & .HyperMD-header-4 .cm-header-4 {
     color: var(--purple);
     font-weight: normal;
     font-style: italic;
   }
 
   & h2,
-  & h6 {
+  & h6,
+  & .HyperMD-header-2 .cm-header-2,
+  & .HyperMD-header-6 .cm-header-6 {
     color: var(--purple);
     font-style: italic;
   }
 
-  & h2 {
+  & h2,
+  & .HyperMD-header-2 .cm-header-2 {
     border-bottom: 1px solid var(--accent);
   }
 
- & p,
- & span,
- & ul,
- & ol {
+  & p,
+  & span,
+  & ul,
+  & ol {
     color: var(--text);
   }
 
- & mark {
+  & mark,
+  & .cm-line .cm-highlight {
     background-color: var(--accent);
     color: var(--black-dark-1);
   }
@@ -45,12 +54,14 @@
     text-decoration-color: var(--accent) !important;
 
     &:hover {
-      background :var(--accent);
+      background: var(--accent);
       color: var(--black);
     }
   }
 
- & blockquote {
+  /* & .cm-quote-1:not(.cm-formatting)  */
+  & blockquote,
+  & .HyperMD-quote {
     border: solid 1px var(--purple);
     border-left-width: 5px;
     color: var(--text);
@@ -59,12 +70,12 @@
     color: var(--accent);
   }
 
- & hr {
+  & hr {
     border-color: var(--purple-dark-3);
   }
 
-   /* Display container */
- & .markdown-preview-section {
+  /* Display container */
+  & .markdown-preview-section {
     max-width: 1000px !important;
   }
 }

@@ -563,8 +563,8 @@ Built with PostCSS and Gulp
   /* ---- HEADINGS */
 }
 .CodeMirror-line.HyperMD-header .cm-header, .cm-line.HyperMD-header .cm-header {
-      font-size: 1.1rem !important;
-      font-size: var(--heading) !important;
+      font-size: 1.1rem;
+      font-size: var(--heading);
       color: hsl(246, 28%, 48%);
       color: var(--purple);
     }
@@ -681,50 +681,78 @@ Built with PostCSS and Gulp
     color: hsl(211, 19%, 60%);
     color: var(--text-mute);
   }
-.markdown-preview-view {
+.markdown-preview-view,
+.is-live-preview {
   font-size: 0.9rem;
-  font-size: var(--par)
+  font-size: var(--par);
+  font-family: var(--font-family)
 }
 .markdown-preview-view h1,
-  .markdown-preview-view h5 {
+  .markdown-preview-view h5,
+  .markdown-preview-view .HyperMD-header-1 .cm-header-1,
+  .is-live-preview h1,
+  .is-live-preview h5,
+  .is-live-preview .HyperMD-header-1 .cm-header-1 {
     color: hsl(164, 68%, 72%);
     color: var(--accent);
   }
-.markdown-preview-view h3 {
+.markdown-preview-view h3,
+  .markdown-preview-view .HyperMD-header-3 .cm-header-3,
+  .is-live-preview h3,
+  .is-live-preview .HyperMD-header-3 .cm-header-3 {
     color: hsl(246, 28%, 63%);
     color: var(--purple-light-3);
     font-weight: normal;
   }
-.markdown-preview-view h4 {
+.markdown-preview-view h4,
+  .markdown-preview-view .HyperMD-header-4 .cm-header-4,
+  .is-live-preview h4,
+  .is-live-preview .HyperMD-header-4 .cm-header-4 {
     color: hsl(246, 28%, 48%);
     color: var(--purple);
     font-weight: normal;
     font-style: italic;
   }
 .markdown-preview-view h2,
-  .markdown-preview-view h6 {
+  .markdown-preview-view h6,
+  .markdown-preview-view .HyperMD-header-2 .cm-header-2,
+  .markdown-preview-view .HyperMD-header-6 .cm-header-6,
+  .is-live-preview h2,
+  .is-live-preview h6,
+  .is-live-preview .HyperMD-header-2 .cm-header-2,
+  .is-live-preview .HyperMD-header-6 .cm-header-6 {
     color: hsl(246, 28%, 48%);
     color: var(--purple);
     font-style: italic;
   }
-.markdown-preview-view h2 {
+.markdown-preview-view h2,
+  .markdown-preview-view .HyperMD-header-2 .cm-header-2,
+  .is-live-preview h2,
+  .is-live-preview .HyperMD-header-2 .cm-header-2 {
     border-bottom: 1px solid hsl(164, 68%, 72%);
     border-bottom: 1px solid var(--accent);
   }
 .markdown-preview-view p,
- .markdown-preview-view span,
- .markdown-preview-view ul,
- .markdown-preview-view ol {
+  .markdown-preview-view span,
+  .markdown-preview-view ul,
+  .markdown-preview-view ol,
+  .is-live-preview p,
+  .is-live-preview span,
+  .is-live-preview ul,
+  .is-live-preview ol {
     color: hsl(212, 61%, 91%);
     color: var(--text);
   }
-.markdown-preview-view mark {
+.markdown-preview-view mark,
+  .markdown-preview-view .cm-line .cm-highlight,
+  .is-live-preview mark,
+  .is-live-preview .cm-line .cm-highlight {
     background-color: hsl(164, 68%, 72%);
     background-color: var(--accent);
     color: hsl(240, 7%, 7%);
     color: var(--black-dark-1);
   }
-.markdown-preview-view a {
+.markdown-preview-view a, .is-live-preview a {
     color: hsl(212, 61%, 91%);
     color: var(--white);
     text-decoration: underline;
@@ -733,32 +761,41 @@ Built with PostCSS and Gulp
     -webkit-text-decoration-color: var(--accent) !important;
             text-decoration-color: var(--accent) !important
   }
-.markdown-preview-view a:hover {
-      background :hsl(164, 68%, 72%);
-      background :var(--accent);
+.markdown-preview-view a:hover, .is-live-preview a:hover {
+      background: hsl(164, 68%, 72%);
+      background: var(--accent);
       color: hsl(240, 7%, 12%);
       color: var(--black);
     }
-.markdown-preview-view blockquote {
+.markdown-preview-view,
+.is-live-preview {
+
+  /* & .cm-quote-1:not(.cm-formatting)  */
+}
+.markdown-preview-view blockquote,
+  .markdown-preview-view .HyperMD-quote,
+  .is-live-preview blockquote,
+  .is-live-preview .HyperMD-quote {
     border: solid 1px hsl(246, 28%, 48%);
     border: solid 1px var(--purple);
     border-left-width: 5px;
     color: hsl(212, 61%, 91%);
     color: var(--text);
   }
-.markdown-preview-view table th {
+.markdown-preview-view table th, .is-live-preview table th {
     color: hsl(164, 68%, 72%);
     color: var(--accent);
   }
-.markdown-preview-view hr {
+.markdown-preview-view hr, .is-live-preview hr {
     border-color: hsl(246, 28%, 33%);
     border-color: var(--purple-dark-3);
   }
-.markdown-preview-view {
+.markdown-preview-view,
+.is-live-preview {
 
-   /* Display container */
+  /* Display container */
 }
-.markdown-preview-view .markdown-preview-section {
+.markdown-preview-view .markdown-preview-section, .is-live-preview .markdown-preview-section {
     max-width: 1000px !important;
   }
 /* @import "./modules/right-side-bar.css"; */

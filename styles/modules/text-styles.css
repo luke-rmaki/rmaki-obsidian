@@ -26,7 +26,7 @@
   /* ---- HEADINGS */
   &.HyperMD-header {
     & .cm-header {
-      font-size: var(--heading) !important;
+      font-size: var(--heading);
       color: var(--purple);
     }
     & .cm-formatting {
