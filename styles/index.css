@@ -11,7 +11,7 @@ Built with PostCSS and Gulp
 
 
 */
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+@import "./modules/font-import.css";
 @import "./modules/vars.css";
 @import "./modules/titlebar.css";
 @import "./modules//sidebars/sidebars.css";
@@ -36,7 +36,8 @@ body {
   background-color: var(--purple-dark-2);
   width: 2px;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: var(--accent);
   }
 }
